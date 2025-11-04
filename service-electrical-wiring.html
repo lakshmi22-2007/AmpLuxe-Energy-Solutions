@@ -46,9 +46,9 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-10">
-                    <a href="index.html" class="text-dark hover:text-accent font-semibold relative group">
+                    <a href="index.html" class="text-secondary hover:text-accent font-semibold relative group">
                         HOME
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
                     </a>
                     <a href="about.html" class="text-secondary hover:text-accent font-semibold relative group">
                         ABOUT US
@@ -57,9 +57,10 @@
                     
                     <!-- Services Dropdown -->
                     <div class="relative">
-                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-secondary hover:text-accent font-semibold">
+                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-dark hover:text-accent font-semibold relative">
                             <span>SERVICES</span>
                             <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
                         </button>
                         
                         <!-- Dropdown Menu -->
@@ -116,14 +117,198 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-pale-steel/30">
             <div class="px-4 py-6 space-y-4">
-                <a href="index.html" class="block px-4 py-2 text-dark font-semibold rounded-lg">HOME</a>
+                <a href="index.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">HOME</a>
                 <a href="about.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">ABOUT US</a>
-                <a href="service.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">SERVICES</a>
+                
+                <!-- Mobile Services Dropdown -->
+                <div class="space-y-2">
+                    <button id="mobile-services-btn" class="flex items-center justify-between w-full px-4 py-2 text-dark font-semibold rounded-lg">
+                        <span>SERVICES</span>
+                        <i id="mobile-services-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </button>
+                    <div id="mobile-services-menu" class="bg-pale-steel-light rounded-lg ml-4 mr-2">
+                        <a href="service-solar-installation.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Solar Panel Installation</a>
+                        <a href="service-electrical-wiring.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Electrical Wiring</a>
+                        <a href="service-meter-box.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Meter Box Installation</a>
+                        <a href="service-electrical-connection.html" class="block px-4 py-2 text-sm text-dark font-semibold">Electrical Connection</a>
+                        <a href="service-maintenance.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Maintenance Works</a>
+                    </div>
+                </div>
+                
                 <a href="contact.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">CONTACT</a>
                 <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-pale-steel-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
+                    <i class="fas fa-plug"></i>
+                    <span>ELECTRICAL WIRING SERVICE</span>
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-black text-dark leading-tight">
+                    Electrical Wiring 
+                    <span class="block text-highlight">Services</span>
+                </h1>
+                <p class="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+                    Reliable Power, Perfect Safety. Our Electrical Wiring Services ensure your building's wiring is safe and efficient, whether you're building new or renovating.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-black text-dark leading-tight">
+                            Safe & Efficient Electrical Solutions
+                        </h2>
+                        <p class="text-lg text-secondary leading-relaxed">
+                            Our certified electricians use high-grade, compliant materials to install robust wiring that meets all safety standards, supporting modern power demands. From new construction to renovation projects, we ensure reliable power distribution throughout your property.
+                        </p>
+                    </div>
+
+                    <!-- Features List -->
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Certified Electricians</h3>
+                                <p class="text-secondary">Licensed professionals with extensive experience in electrical installations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">High-Grade Materials</h3>
+                                <p class="text-secondary">Premium quality wiring and components that meet all safety standards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Code Compliance</h3>
+                                <p class="text-secondary">All installations meet local electrical codes and safety regulations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Modern Power Support</h3>
+                                <p class="text-secondary">Wiring systems designed to handle today's electrical demands</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-6">
+                        <a href="contact.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300">
+                            <span>Get Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="businessmen.jpg" alt="Electrical Wiring Installation Team" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="py-20 bg-pale-steel-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-dark mb-6">
+                    Our Electrical Wiring Services
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
+                    Comprehensive electrical wiring solutions for all types of construction and renovation projects.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- New Construction -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-building text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">New Construction</h3>
+                    <p class="text-secondary text-center leading-relaxed">
+                        Complete electrical wiring for new buildings, ensuring proper planning and installation from the ground up.
+                    </p>
+                </div>
+
+                <!-- Renovation Projects -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-wrench text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Renovation Wiring</h3>
+                    <p class="text-secondary text-center leading-relaxed">
+                        Upgrade and modernize existing electrical systems to meet current safety standards and power requirements.
+                    </p>
+                </div>
+
+                <!-- Commercial Wiring -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-industry text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Commercial Wiring</h3>
+                    <p class="text-secondary text-center leading-relaxed">
+                        Heavy-duty electrical wiring for commercial and industrial facilities with high power demands.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-accent">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <h2 class="text-4xl font-black text-white">
+                    Need Professional Electrical Wiring?
+                </h2>
+                <p class="text-xl text-white/90 leading-relaxed">
+                    Trust our certified electricians for safe, reliable, and code-compliant electrical wiring installations. Contact us today for your electrical project needs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contact.html" class="bg-white text-accent px-10 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-3">
+                        <span>Get Free Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+91XXXXXXXXX" class="border-2 border-white text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-accent transition-all duration-300 inline-flex items-center justify-center space-x-3">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Us Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-20">
@@ -217,6 +402,16 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile Services Dropdown
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesIcon = document.getElementById('mobile-services-icon');
+        
+        mobileServicesBtn.addEventListener('click', () => {
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesIcon.classList.toggle('rotate-180');
         });
 
         // Services Dropdown Toggle
