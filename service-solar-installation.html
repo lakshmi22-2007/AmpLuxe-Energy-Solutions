@@ -46,9 +46,9 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-10">
-                    <a href="index.html" class="text-dark hover:text-accent font-semibold relative group">
+                    <a href="index.html" class="text-secondary hover:text-accent font-semibold relative group">
                         HOME
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
                     </a>
                     <a href="about.html" class="text-secondary hover:text-accent font-semibold relative group">
                         ABOUT US
@@ -57,9 +57,10 @@
                     
                     <!-- Services Dropdown -->
                     <div class="relative">
-                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-secondary hover:text-accent font-semibold">
+                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-dark hover:text-accent font-semibold relative">
                             <span>SERVICES</span>
                             <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
                         </button>
                         
                         <!-- Dropdown Menu -->
@@ -124,6 +125,175 @@
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-pale-steel-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
+                    <i class="fas fa-solar-panel"></i>
+                    <span>SOLAR INSTALLATION SERVICE</span>
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-black text-dark leading-tight">
+                    Solar Panel Systems 
+                    <span class="block text-highlight">Installation</span>
+                </h1>
+                <p class="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+                    Our end-to-end Solar Panel System Installation service offers energy freedom. We design, install, and secure permits for custom systems that suit your energy needs and roof layout.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-black text-dark leading-tight">
+                            Complete Solar Energy Solutions
+                        </h2>
+                        <p class="text-lg text-secondary leading-relaxed">
+                            Generate your own power and enjoy the peace of mind of a sustainable, long-term investment for residential, commercial office spaces, and large commercial buildings. Our comprehensive approach ensures maximum efficiency and returns on your solar investment.
+                        </p>
+                    </div>
+
+                    <!-- Features List -->
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Custom System Design</h3>
+                                <p class="text-secondary">Tailored solar solutions based on your energy needs and roof layout</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Professional Installation</h3>
+                                <p class="text-secondary">Expert installation with 20+ years of experience and certified technicians</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Permit & Documentation</h3>
+                                <p class="text-secondary">We handle all permits and documentation for hassle-free installation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark mb-1">Long-term Investment</h3>
+                                <p class="text-secondary">Sustainable solution with excellent returns and energy independence</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-6">
+                        <a href="contact.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300">
+                            <span>Get Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="businessmen.jpg" alt="Solar Panel Installation Team" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="py-20 bg-pale-steel-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-dark mb-6">
+                    Our Solar Installation Services
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
+                    We provide comprehensive solar solutions for different property types and energy requirements.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Residential -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Residential</h3>
+                    <p class="text-secondary text-center leading-relaxed">
+                        Custom solar panel systems for homes, reducing electricity bills and increasing property value with clean energy solutions.
+                    </p>
+                </div>
+
+                <!-- Commercial Office -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-building text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Commercial Office</h3>
+                    <p class="text-secondary text-center leading-relaxed">
+                        Scalable solar solutions for office buildings, helping businesses reduce operational costs and carbon footprint.
+                    </p>
+                </div>
+
+                <!-- Large Commercial -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-industry text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Large Commercial</h3>
+                    <p class="text-secondary text-center leading-relaxed">
+                        Industrial-scale solar installations for manufacturing facilities and large commercial buildings with high energy demands.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-accent">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <h2 class="text-4xl font-black text-white">
+                    Ready to Go Solar?
+                </h2>
+                <p class="text-xl text-white/90 leading-relaxed">
+                    Contact us today for a free consultation and take the first step towards energy independence with our professional solar panel installation services.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contact.html" class="bg-white text-accent px-10 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-3">
+                        <span>Get Free Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+91XXXXXXXXX" class="border-2 border-white text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-accent transition-all duration-300 inline-flex items-center justify-center space-x-3">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Us Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-20">
