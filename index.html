@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AmpLuxe Energy Solutions - Solar & Renewable Energy</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pale-steel': '#d4dae6',
+                        'pale-steel-dark': '#b8c2d4',
+                        'pale-steel-light': '#e8ecf2',
+                        'primary': '#d4dae6',
+                        'secondary': '#64748b',
+                        'accent': '#475569',
+                        'dark': '#1e293b',
+                        'light': '#f8fafc',
+                        'highlight': '#e4bd5a'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-light text-dark overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white border-b border-pale-steel/30 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                    <div>
+                        <span class="text-xl font-bold text-dark">AmpLuxe</span>
+                        <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="index.html" class="text-dark hover:text-accent font-semibold relative group">
+                        HOME
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                    </a>
+                    <a href="about.html" class="text-secondary hover:text-accent font-semibold relative group">
+                        ABOUT US
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative">
+                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-secondary hover:text-accent font-semibold">
+                            <span>SERVICES</span>
+                            <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="services-dropdown-menu" class="absolute top-full left-0 mt-4 w-80 bg-white rounded-2xl shadow-2xl border border-pale-steel/30 opacity-0 invisible transform scale-95 transition-all duration-200 z-50">
+                            <div class="p-3">
+                                <a href="service-solar-installation.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-solar-panel text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Solar Panel Systems Installation</span>
+                                </a>
+                                <a href="service-electrical-wiring.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-plug text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Electrical Wiring Services</span>
+                                </a>
+                                <a href="service-meter-box.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-tachometer-alt text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Meter Box Installation & Upgrades</span>
+                                </a>
+                                <a href="service-electrical-connection.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-home text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">New Electrical Connection Support</span>
+                                </a>
+                                <a href="service-maintenance.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-tools text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Maintenance Works</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="text-secondary hover:text-accent font-semibold relative group">
+                        CONTACT
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="bg-highlight text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
+                        <span>Get A Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-dark p-2 rounded-lg hover:bg-pale-steel-light">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-pale-steel/30">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block px-4 py-2 text-dark font-semibold rounded-lg">HOME</a>
+                <a href="about.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">ABOUT US</a>
+                <a href="service.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">SERVICES</a>
+                <a href="contact.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">CONTACT</a>
+                <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-pale-steel-light relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-30">
+            
+           
+            <div class="absolute bottom-32 left-40 w-3 h-3 bg-highlight/30 rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-4 h-4 bg-accent/20 rounded-full"></div>
+            <div class="absolute top-1/2 left-10 w-1 h-1 bg-highlight/40 rounded-full"></div>
+            <div class="absolute top-1/3 right-10 w-2 h-2 bg-accent/30 rounded-full"></div>
+        </div>
+        
+        <div class="relative pt-32 pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <!-- Hero Content -->
+                    <div class="space-y-10">
+                        <div class="space-y-6">
+                            <div class="inline-flex items-center space-x-3 bg-highlight/20 px-6 py-3 rounded-full text-sm font-bold text-accent border border-highlight/30">
+                                <i class="fas fa-leaf text-highlight"></i>
+                                <span>SOLAR & RENEWABLE ENERGY SOLUTIONS</span>
+                            </div>
+                            
+                            <h1 class="text-6xl lg:text-7xl xl:text-8xl font-black text-dark leading-[0.9]">
+                                Power Your
+                                <span class="block text-highlight">
+                                    Future
+                                </span>
+                                <span class="block text-accent">
+                                    Today
+                                </span>
+                            </h1>
+                            
+                            <p class="text-xl lg:text-2xl text-secondary leading-relaxed max-w-2xl font-medium">
+                                Transform your energy consumption with our comprehensive solar and electrical services. 
+                                <span class="text-accent font-semibold">20+ years of expertise</span> delivering sustainable solutions in Chennai.
+                            </p>
+                        </div>
+                        
+                        <!-- Hero Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-6 pt-6">
+                            <a href="contact.html" class="group bg-highlight text-white px-12 py-5 rounded-2xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-4">
+                                <span class="text-lg">Get Free Quote</span>
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="about.html" class="group border-2 border-accent text-accent px-12 py-5 rounded-2xl font-bold hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center space-x-4">
+                                <i class="fas fa-play text-accent group-hover:text-white"></i>
+                                <span class="text-lg">Learn More</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Dynamic Stats -->
+                        <div class="grid grid-cols-3 gap-8 pt-16 border-t border-pale-steel">
+                            <div class="text-center group">
+                                <div class="text-5xl font-black text-accent mb-3 counter" data-target="20">0</div>
+                                <p class="text-secondary font-semibold">Years Experience</p>
+                            </div>
+                            <div class="text-center group">
+                                <div class="text-5xl font-black text-accent mb-3 counter" data-target="500">0</div>
+                                <p class="text-secondary font-semibold">Projects Completed</p>
+                            </div>
+                            <div class="text-center group">
+                                <div class="text-5xl font-black text-accent mb-3 counter" data-target="100">0</div>
+                                <p class="text-secondary font-semibold">Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Image -->
+                    <div class="relative lg:h-[600px]">
+                        <div class="relative z-10 h-full">
+                            <!-- Main Image Container -->
+                            <div class="relative h-full bg-white rounded-3xl p-4 shadow-2xl border border-pale-steel/30 transform hover:scale-105 transition-all duration-500">
+                                <div class="h-full rounded-2xl overflow-hidden relative">
+                                    <img src="businessmen.jpg" alt="Professional Solar Installation Team" class="w-full h-full object-cover">
+                                    
+                                    <!-- Overlay Content -->
+                                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                                        <h3 class="text-2xl font-bold text-white mb-2">Expert Solar Installation</h3>
+                                        <p class="text-white/90">Professional team with 20+ years experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating Elements -->
+                            
+                            
+                            
+                           
+                        </div>
+                        
+                        <!-- Background Decorative Elements -->
+                        <div class="absolute top-10 right-10 w-32 h-32 bg-highlight/20 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-10 left-10 w-40 h-40 bg-pale-steel/30 rounded-full blur-3xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-8 h-12 border-2 border-accent rounded-full flex justify-center p-2">
+                <div class="w-1 h-4 bg-accent rounded-full animate-pulse"></div>
+            </div>
+            <p class="text-secondary text-sm mt-2 text-center">Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-100 to-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center space-y-6 mb-20">
+                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
+                    <span>🔧 OUR SERVICES</span>
+                </div>
+                <h2 class="text-5xl font-black text-gray-800">Core Services We Offer</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive electrical and solar solutions designed to meet all your energy needs with safety, efficiency, and reliability.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Solar Panel Installation -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="w-20 h-20 bg-gray-200 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-solar-panel text-gray-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Solar Panel Installation</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        End-to-end solar solutions offering energy freedom with custom system design and professional installation.
+                    </p>
+                    <a href="service-solar-installation.html" class="inline-flex items-center space-x-2 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Electrical Wiring -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="w-20 h-20 bg-gray-200 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-plug text-gray-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Electrical Wiring</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Safe and efficient electrical wiring for new construction and renovations using high-grade materials.
+                    </p>
+                    <a href="service-electrical-wiring.html" class="inline-flex items-center space-x-2 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Maintenance Works -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="w-20 h-20 bg-gray-200 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-tools text-gray-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Maintenance Works</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Comprehensive maintenance services including inspections, preventative care, and performance optimization.
+                    </p>
+                    <a href="service-maintenance.html" class="inline-flex items-center space-x-2 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- View All Services Button -->
+            <div class="text-center">
+                <a href="service.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+        <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Column -->
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="hero-index.png" alt="Solar Energy Expert" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-4">
+                            <span>WHY CHOOSE US</span>
+                        </div>
+                        <h2 class="text-5xl font-black text-dark leading-tight">
+                            Empowering Communities with Solar Energy
+                        </h2>
+                        <p class="text-secondary text-lg leading-relaxed">
+                            We provide comprehensive solar and electrical solutions designed to meet all your energy needs with safety, efficiency, and reliability for a sustainable future.
+                        </p>
+                    </div>
+
+                    <!-- Benefits Grid -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-sm"></i>
+                            </div>
+                            <span class="text-dark font-semibold">Save Your Money</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-sm"></i>
+                            </div>
+                            <span class="text-dark font-semibold">Flexibility Work Environment</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-sm"></i>
+                            </div>
+                            <span class="text-dark font-semibold">Simple And Easy To Use</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-sm"></i>
+                            </div>
+                            <span class="text-dark font-semibold">Best Energy Solution</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-sm"></i>
+                            </div>
+                            <span class="text-dark font-semibold">Very Fast Customer Service</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-sm"></i>
+                            </div>
+                            <span class="text-dark font-semibold">Experienced Team Members</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4">
+                        <a href="about.html" class="inline-flex items-center space-x-3 bg-accent text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+   
+    <!-- About Our Company Section -->
+    <section class="py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content Side -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
+                        <span>ABOUT OUR COMPANY</span>
+                    </div>
+                    
+                    <h2 class="text-5xl font-black text-dark leading-tight">
+                        Powering the 
+                        <span class="block">Future One Ray at</span>
+                        <span class="block">Time</span>
+                    </h2>
+                    
+                    <!-- Feature Items -->
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 bg-green-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-cog text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-3">Reliability Manufacturing</h3>
+                                <p class="text-secondary leading-relaxed">
+                                    Aut dispenser dolorous aspersions repel lat a man can easily trusted.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 bg-yellow-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-3">Material Financing Energy</h3>
+                                <p class="text-secondary leading-relaxed">
+                                    Sun consequent aut dispenser dolorous repel lat with a man who chooses to enjoy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Learn More Button -->
+                    <div class="pt-6">
+                        <a href="about.html" class="inline-flex items-center space-x-3 bg-teal-700 text-white px-8 py-4 rounded-full font-bold hover:bg-teal-800 hover:shadow-xl transition-all group">
+                            <span>Learn More</span>
+                            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-arrow-right text-teal-700 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image Side -->
+                <div class="relative h-96">
+                    <!-- Main large background image -->
+                    <div class="relative w-full h-full">
+                        <img src="perso.jpg" alt="Solar Installation Professional" class="w-full h-full object-cover rounded-3xl shadow-xl">
+                    </div>
+                    
+                    <!-- Smaller overlaid image - positioned in middle right -->
+                    <div class="absolute top-1/3 -right-6 w-40 h-28 bg-white p-2 rounded-2xl shadow-xl z-10">
+                        <img src="businessmen.jpg" alt="Solar Panel Installation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    
+                    <!-- Experience Badge - positioned in bottom left area -->
+                    <div class="absolute bottom-6 left-6 bg-gradient-to-br from-green-300 to-green-400 rounded-2xl p-5 shadow-xl text-center z-20 min-w-[160px]">
+                        <div class="text-4xl font-black text-gray-800 mb-1">20+</div>
+                        <div class="text-gray-800 font-bold text-xs leading-tight">
+                            YEARS OF EXPERIENCE<br>
+                            IN THIS FIELD
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process Section -->
+    <section class="py-16 bg-pale-steel-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 bg-highlight text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <span>OUR WORK PROCESS</span>
+                </div>
+                
+                <h2 class="text-4xl font-black text-dark leading-tight">
+                    Lighting The Way to A
+                    <span class="block">Sustainable Future</span>
+                </h2>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 01 - Project Planning -->
+                <div class="text-center group">
+                    <div class="relative mb-6">
+                        <!-- Icon Circle -->
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-200 to-green-300 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-clipboard-list text-green-700 text-xl"></i>
+                        </div>
+                        
+                        <!-- Step Badge -->
+                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-highlight text-white px-3 py-1 rounded-full text-xs font-bold">
+                                Step - 01
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-dark mb-3">Project Planning</h3>
+                    <p class="text-secondary leading-relaxed text-sm">
+                        Planning sites still in their work infancy, have evolved over the years sometimes
+                    </p>
+                </div>
+
+                <!-- Step 02 - Research & Analysis -->
+                <div class="text-center group">
+                    <div class="relative mb-6">
+                        <!-- Icon Circle -->
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-200 to-green-300 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-search text-green-700 text-xl"></i>
+                        </div>
+                        
+                        <!-- Step Badge -->
+                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-highlight text-white px-3 py-1 rounded-full text-xs font-bold">
+                                Step - 02
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-dark mb-3">Research & Analysis</h3>
+                    <p class="text-secondary leading-relaxed text-sm">
+                        We will uncover many web sites still in their work infancy versions have evolved
+                    </p>
+                </div>
+
+                <!-- Step 03 - Solar Installation -->
+                <div class="text-center group">
+                    <div class="relative mb-6">
+                        <!-- Icon Circle -->
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-200 to-green-300 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-solar-panel text-green-700 text-xl"></i>
+                        </div>
+                        
+                        <!-- Step Badge -->
+                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-highlight text-white px-3 py-1 rounded-full text-xs font-bold">
+                                Step - 03
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-dark mb-3">Solar Installation</h3>
+                    <p class="text-secondary leading-relaxed text-sm">
+                        Various versions have evolved over the years, sometimes processing
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-2 h-2 bg-gray-300/40 rounded-full"></div>
+            <div class="absolute top-40 right-32 w-1 h-1 bg-gray-300/50 rounded-full"></div>
+            <div class="absolute bottom-32 left-40 w-1.5 h-1.5 bg-gray-300/45 rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-2 h-2 bg-gray-300/40 rounded-full"></div>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <!-- Header -->
+                <div class="space-y-6">
+                    <h2 class="text-5xl font-black text-gray-700 leading-tight">
+                        Ready to Start Your 
+                        <span class="block">Energy Journey?</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Contact us today for a free consultation and discover how we can help you achieve energy independence with our professional solar and electrical services.
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="contact.html" class="bg-white text-gray-700 px-10 py-4 rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 border border-gray-200">
+                        <span>Get Free Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+91XXXXXXXXX" class="border-2 border-gray-400 text-gray-600 px-10 py-4 rounded-full font-bold hover:bg-gray-600 hover:text-white transition-all duration-300 inline-flex items-center space-x-3">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Us Now</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="pt-12 border-t border-gray-300">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md border border-gray-200">
+                                <i class="fas fa-award text-gray-600 text-2xl"></i>
+                            </div>
+                            <div class="text-3xl font-black text-gray-700 mb-2">20+</div>
+                            <div class="text-gray-600 font-medium">Years of Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md border border-gray-200">
+                                <i class="fas fa-users text-gray-600 text-2xl"></i>
+                            </div>
+                            <div class="text-3xl font-black text-gray-700 mb-2">500+</div>
+                            <div class="text-gray-600 font-medium">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md border border-gray-200">
+                                <i class="fas fa-star text-gray-600 text-2xl"></i>
+                            </div>
+                            <div class="text-3xl font-black text-gray-700 mb-2">100%</div>
+                            <div class="text-gray-600 font-medium">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                        <div>
+                            <span class="text-xl font-bold">AmpLuxe</span>
+                            <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary leading-relaxed">
+                        Providing comprehensive solar and electrical services for a sustainable future.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>About Us</span></a></li>
+                        <li><a href="service.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Services</span></a></li>
+                        <li><a href="contact.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Contact</span></a></li>
+                        <li><a href="#" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Projects</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="service-solar-installation.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Solar Installation</span></a></li>
+                        <li><a href="service-electrical-wiring.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Electrical Wiring</span></a></li>
+                        <li><a href="service-maintenance.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Maintenance</span></a></li>
+                        <li><a href="service-meter-box.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Meter Box Upgrades</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-pale-steel mt-1"></i>
+                            <p class="text-secondary">Mount Road, Chennai, Tamil Nadu, India</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-pale-steel"></i>
+                            <p class="text-secondary">info@ampluxeenergy.com</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-pale-steel"></i>
+                            <p class="text-secondary">+91 XXX XXX XXXX</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-pale-steel"></i>
+                            <p class="text-secondary">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-secondary/30 mt-16 pt-8 text-center">
+                <p class="text-secondary">&copy; 2025 AmpLuxe Energy Solutions LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                        if (target === 100) {
+                            counter.textContent = current + '%';
+                        } else {
+                            counter.textContent = current + '+';
+                        }
+                    } else {
+                        if (target === 100) {
+                            counter.textContent = Math.floor(current) + '%';
+                        } else {
+                            counter.textContent = Math.floor(current) + '+';
+                        }
+                    }
+                }, 50);
+            });
+        }
+
+        // Start counter animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(animateCounters, 500);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Services Dropdown Toggle
+        const servicesDropdownBtn = document.getElementById('services-dropdown-btn');
+        const servicesDropdownMenu = document.getElementById('services-dropdown-menu');
+        const servicesDropdownIcon = document.getElementById('services-dropdown-icon');
+        
+        servicesDropdownBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isVisible = !servicesDropdownMenu.classList.contains('opacity-0');
+            
+            if (isVisible) {
+                // Close dropdown
+                servicesDropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                servicesDropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                servicesDropdownIcon.classList.remove('rotate-180');
+            } else {
+                // Open dropdown
+                servicesDropdownMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+                servicesDropdownMenu.classList.add('opacity-100', 'visible', 'scale-100');
+                servicesDropdownIcon.classList.add('rotate-180');
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            // Close mobile menu
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+            
+            // Close services dropdown
+            if (!servicesDropdownBtn.contains(e.target) && !servicesDropdownMenu.contains(e.target)) {
+                servicesDropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                servicesDropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                servicesDropdownIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

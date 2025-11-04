@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AmpLuxe Energy Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pale-steel': '#d4dae6',
+                        'pale-steel-dark': '#b8c2d4',
+                        'pale-steel-light': '#e8ecf2',
+                        'primary': '#d4dae6',
+                        'secondary': '#64748b',
+                        'accent': '#475569',
+                        'dark': '#1e293b',
+                        'light': '#f8fafc',
+                        'highlight': '#e4bd5a'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-light text-dark overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white border-b border-pale-steel/30 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                    <div>
+                        <span class="text-xl font-bold text-dark">AmpLuxe</span>
+                        <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="index.html" class="text-secondary hover:text-accent font-semibold relative group">
+                        HOME
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-dark hover:text-accent font-semibold relative group">
+                        ABOUT US
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                    </a>
+                    
+                     <div class="relative">
+                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-secondary hover:text-accent font-semibold">
+                            <span>SERVICES</span>
+                            <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="services-dropdown-menu" class="absolute top-full left-0 mt-4 w-80 bg-white rounded-2xl shadow-2xl border border-pale-steel/30 opacity-0 invisible transform scale-95 transition-all duration-200 z-50">
+                            <div class="p-3">
+                                <a href="service-solar-installation.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-solar-panel text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Solar Panel Systems Installation</span>
+                                </a>
+                                <a href="service-electrical-wiring.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-plug text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Electrical Wiring Services</span>
+                                </a>
+                                <a href="service-meter-box.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-tachometer-alt text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Meter Box Installation & Upgrades</span>
+                                </a>
+                                <a href="service-electrical-connection.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-home text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">New Electrical Connection Support</span>
+                                </a>
+                                <a href="service-maintenance.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-tools text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Maintenance Works</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="text-secondary hover:text-accent font-semibold relative group">
+                        CONTACT
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="bg-highlight text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
+                        <span>Get A Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-dark p-2 rounded-lg hover:bg-pale-steel-light">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-pale-steel/30">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">HOME</a>
+                <a href="about.html" class="block px-4 py-2 text-dark font-semibold rounded-lg">ABOUT US</a>
+                <a href="#" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">SERVICES</a>
+                <a href="contact.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">CONTACT</a>
+                <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-pale-steel-light via-white to-pale-steel-light pt-32 pb-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Hero Content -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-200px)]">
+                <!-- Content Column -->
+                <div class="space-y-8 order-2 lg:order-1">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-highlight/20 px-6 py-2 rounded-full mb-4">
+                            <i class="fas fa-lightbulb text-highlight"></i>
+                            <span class="text-highlight font-semibold text-sm">Powering Energy Solutions</span>
+                        </div>
+                        <h1 class="text-6xl lg:text-7xl font-black text-dark leading-tight">About AmpLuxe</h1>
+                    </div>
+
+                    <p class="text-2xl text-secondary font-semibold">AmpLuxe Energy Solutions LLP</p>
+
+                    <p class="text-lg text-secondary leading-relaxed">
+                        We provide comprehensive and reliable solar and electrical services to power a sustainable future for commercial and residential clients. Based in Mount Road, Chennai, we specialise in end-to-end energy solutions ensuring safe, compliant and optimised installations.
+                    </p>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        With over 20 years of expertise in this field, we aim to provide the best service we have to offer. Our commitment to excellence, safety, and customer satisfaction drives everything we do.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="contact.html" class="bg-highlight text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Get Started</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="contact.html" class="border-2 border-highlight text-highlight px-8 py-4 rounded-xl font-semibold hover:bg-highlight/10 transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Learn More</span>
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="space-y-2">
+                            <div class="text-4xl font-black text-highlight">20+</div>
+                            <p class="text-secondary font-semibold text-sm">Years Experience</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-4xl font-black text-highlight">500+</div>
+                            <p class="text-secondary font-semibold text-sm">Happy Customers</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-4xl font-black text-highlight">100%</div>
+                            <p class="text-secondary font-semibold text-sm">Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="relative order-1 lg:order-2 -mt-12">
+                    <div class="bg-white rounded-3xl p-4 shadow-2xl border border-pale-steel/30">
+                        <img src="hero-about.png" alt="AmpLuxe Energy Solutions Team" class="w-full h-auto object-cover rounded-2xl">
+                    </div>
+
+                    <!-- Floating Expert Support Card -->
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl border border-pale-steel/30">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-highlight text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-dark text-sm">Expert Team</p>
+                                <p class="text-secondary text-xs">Licensed & Certified</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solar Expert Indicator -->
+                    <div class="absolute top-1/2 -right-8 bg-highlight rounded-full w-16 h-16 flex items-center justify-center shadow-lg transform -translate-y-1/2">
+                        <div class="text-center">
+                            <p class="text-white font-black text-sm">Solar</p>
+                            <p class="text-white text-xs font-bold">Expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
+            <i class="fas fa-chevron-down text-secondary text-xl animate-bounce"></i>
+        </div>
+    </section>
+
+            <!-- Core Services Section -->
+            <div class="mb-20">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-6">
+                        <span>🔧 OUR SERVICES</span>
+                    </div>
+                    <h2 class="text-5xl font-black text-dark">Core Services</h2>
+                    <p class="text-xl text-secondary max-w-3xl mx-auto mt-6">
+                        Comprehensive electrical and solar solutions designed to meet all your energy needs with safety, efficiency, and reliability.
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Service 1 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
+                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
+                            <i class="fas fa-solar-panel text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Solar Panel Systems Installation</h3>
+                        <p class="text-secondary mb-8 leading-relaxed">
+                            Our end-to-end Solar Panel System Installation service offers energy freedom. We design, install, and secure permits for custom systems that suit your energy needs and roof layout.
+                        </p>
+                        <p class="text-secondary leading-relaxed">
+                            Generate your own power and enjoy the peace of mind of a sustainable, long-term investment for residential, commercial office spaces, and large commercial buildings.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
+                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
+                            <i class="fas fa-bolt text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Electrical Wiring Services</h3>
+                        <p class="text-secondary mb-8 leading-relaxed">
+                            Reliable Power, Perfect Safety. Our Electrical Wiring Services ensure your building's wiring is safe and efficient, whether you're building new or renovating.
+                        </p>
+                        <p class="text-secondary leading-relaxed">
+                            Our certified electricians use high-grade, compliant materials to install robust wiring that meets all safety standards, supporting modern power demands.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
+                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
+                            <i class="fas fa-tachometer-alt text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Meter Box Installation & Upgrades</h3>
+                        <p class="text-secondary mb-8 leading-relaxed">
+                            "Is your old meter box a risk or a bottleneck?". We offer expert meter box installation and upgrades to safely manage your property's power intake.
+                        </p>
+                        <p class="text-secondary leading-relaxed">
+                            This is crucial for handling the load of new air conditioners, electric vehicle chargers, or a new solar system.
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
+                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
+                            <i class="fas fa-plug text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">New Electrical Connection Support</h3>
+                        <p class="text-secondary mb-8 leading-relaxed">
+                            We simplify the process of getting your power connected when building a new home or business. We handle all the paperwork and technical work.
+                        </p>
+                        <p class="text-secondary leading-relaxed">
+                            From applying for your connection to the final installation and safety check. We ensure your home or business is powered up quickly and stress-free.
+                        </p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
+                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
+                            <i class="fas fa-tools text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Maintenance Works</h3>
+                        <p class="text-secondary mb-8 leading-relaxed">
+                            Protect your energy investment. Our comprehensive Maintenance Works cover routine inspections, preventative care, performance checks, and rapid repairs for all our installed systems.
+                        </p>
+                        <p class="text-secondary leading-relaxed">
+                            A small investment in maintenance today ensures maximum efficiency, safety, and system longevity, maximising your savings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center bg-white rounded-3xl p-12 shadow-xl border border-pale-steel/30">
+                <h2 class="text-5xl font-black text-dark mb-6">Ready to Power Your Future?</h2>
+                <p class="text-xl text-secondary mb-8">Contact us today for a free consultation and personalized energy solution.</p>
+                <a href="contact.html" class="bg-highlight text-white px-10 py-4 rounded-full hover:shadow-2xl transition-all inline-flex items-center space-x-3 font-bold">
+                    <i class="fas fa-phone"></i>
+                    <span>Get Started Today</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                        <div>
+                            <span class="text-xl font-bold">AmpLuxe</span>
+                            <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary leading-relaxed">
+                        Providing comprehensive solar and electrical services for a sustainable future.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>About Us</span></a></li>
+                        <li><a href="#" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Services</span></a></li>
+                        <li><a href="contact.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Contact</span></a></li>
+                        <li><a href="#" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Projects</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="service-solar-panel.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Solar Installation</span></a></li>
+                        <li><a href="service-electrical-wiring.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Electrical Wiring</span></a></li>
+                        <li><a href="service-maintenance.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Maintenance</span></a></li>
+                        <li><a href="service-meter-box.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Meter Box Upgrades</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-highlight mt-1"></i>
+                            <p class="text-secondary">Mount Road, Chennai, Tamil Nadu, India</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-highlight"></i>
+                            <p class="text-secondary">info@ampluxeenergy.com</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-highlight"></i>
+                            <p class="text-secondary">+91 XXX XXX XXXX</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-highlight"></i>
+                            <p class="text-secondary">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-secondary/30 mt-16 pt-8 text-center">
+                <p class="text-secondary">&copy; 2025 AmpLuxe Energy Solutions LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Services Dropdown Toggle
+        const servicesDropdownBtn = document.getElementById('services-dropdown-btn');
+        const servicesDropdownMenu = document.getElementById('services-dropdown-menu');
+        const servicesDropdownIcon = document.getElementById('services-dropdown-icon');
+        
+        servicesDropdownBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isVisible = !servicesDropdownMenu.classList.contains('opacity-0');
+            
+            if (isVisible) {
+                // Close dropdown
+                servicesDropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                servicesDropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                servicesDropdownIcon.classList.remove('rotate-180');
+            } else {
+                // Open dropdown
+                servicesDropdownMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+                servicesDropdownMenu.classList.add('opacity-100', 'visible', 'scale-100');
+                servicesDropdownIcon.classList.add('rotate-180');
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            // Close mobile menu
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+            
+            // Close services dropdown
+            if (!servicesDropdownBtn.contains(e.target) && !servicesDropdownMenu.contains(e.target)) {
+                servicesDropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                servicesDropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                servicesDropdownIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

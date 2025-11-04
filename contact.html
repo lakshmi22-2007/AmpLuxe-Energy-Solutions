@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AmpLuxe Energy Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pale-steel': '#d4dae6',
+                        'pale-steel-dark': '#b8c2d4',
+                        'pale-steel-light': '#e8ecf2',
+                        'primary': '#d4dae6',
+                        'secondary': '#64748b',
+                        'accent': '#475569',
+                        'dark': '#1e293b',
+                        'light': '#f8fafc',
+                        'highlight': '#e4bd5a'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-light text-dark overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white border-b border-pale-steel/30 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                    <div>
+                        <span class="text-xl font-bold text-dark">AmpLuxe</span>
+                        <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="index.html" class="text-secondary hover:text-accent font-semibold relative group">
+                        HOME
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-secondary hover:text-accent font-semibold relative group">
+                        ABOUT US
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    
+                    <!-- Services Dropdown -->
+                     <div class="relative">
+                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-secondary hover:text-accent font-semibold">
+                            <span>SERVICES</span>
+                            <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="services-dropdown-menu" class="absolute top-full left-0 mt-4 w-80 bg-white rounded-2xl shadow-2xl border border-pale-steel/30 opacity-0 invisible transform scale-95 transition-all duration-200 z-50">
+                            <div class="p-3">
+                                <a href="service-solar-installation.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-solar-panel text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Solar Panel Systems Installation</span>
+                                </a>
+                                <a href="service-electrical-wiring.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-plug text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Electrical Wiring Services</span>
+                                </a>
+                                <a href="service-meter-box.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-tachometer-alt text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Meter Box Installation & Upgrades</span>
+                                </a>
+                                <a href="service-electrical-connection.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-home text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">New Electrical Connection Support</span>
+                                </a>
+                                <a href="service-maintenance.html" class="flex items-center space-x-4 px-4 py-3 text-dark hover:bg-pale-steel-light rounded-xl group/item transition-colors duration-200">
+                                    <i class="fas fa-tools text-pale-steel-dark"></i>
+                                    <span class="group-hover/item:text-accent">Maintenance Works</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="text-dark hover:text-accent font-semibold relative group">
+                        CONTACT
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                    </a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="bg-highlight text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
+                        <span>Get A Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-dark p-2 rounded-lg hover:bg-pale-steel-light">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-pale-steel/30">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">HOME</a>
+                <a href="about.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">ABOUT US</a>
+                <a href="#" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">SERVICES</a>
+                <a href="contact.html" class="block px-4 py-2 text-dark font-semibold rounded-lg">CONTACT</a>
+                <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="min-h-screen bg-gradient-to-br from-pale-steel-light via-white to-pale-steel-light relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-highlight rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="relative pt-12 pb-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+                        <!-- Hero Content -->
+                        <div class="space-y-8 order-2 lg:order-1">
+                            <div class="inline-flex items-center space-x-2 bg-highlight/20 px-6 py-3 rounded-full text-sm font-semibold text-highlight border border-highlight/30">
+                                <i class="fas fa-phone text-highlight"></i>
+                                <span>Ready to Help 24/7</span>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <h1 class="text-6xl lg:text-7xl font-black text-dark leading-tight">
+                                    Let's Connect
+                                    <span class="block text-highlight">& Power Up</span>
+                                    <span class="block text-accent">Your Future</span>
+                                </h1>
+                                
+                                <p class="text-xl text-secondary leading-relaxed max-w-2xl">
+                                    Ready to transform your energy future? Get in touch with our expert team for personalized electrical and solar solutions that power sustainable living across India.
+                                </p>
+                            </div>
+                            
+                            <!-- Quick Contact Options -->
+                            <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                                <a href="tel:+91XXXXXXXXXX" class="bg-highlight text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 group">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Now</span>
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                                </a>
+                                <a href="#contact-form" class="border-2 border-highlight text-highlight px-8 py-4 rounded-full font-bold hover:bg-highlight hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 group">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Send Message</span>
+                                    <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform duration-300"></i>
+                                </a>
+                            </div>
+                            
+                            <!-- Quick Stats -->
+                            <div class="grid grid-cols-3 gap-8 pt-12 border-t border-pale-steel/50">
+                                <div class="text-center">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-clock text-highlight"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-3xl font-black text-dark mb-1">24/7</p>
+                                    <p class="text-secondary font-semibold text-sm">Emergency Support</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-users text-highlight"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-3xl font-black text-dark mb-1">500+</p>
+                                    <p class="text-secondary font-semibold text-sm">Happy Customers</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-award text-highlight"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-3xl font-black text-dark mb-1">20+</p>
+                                    <p class="text-secondary font-semibold text-sm">Years Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hero Image -->
+                        <div class="relative order-1 lg:order-2 -mt-12">
+                            <div class="relative z-10">
+                                <!-- Main Image Container -->
+                                <div class="bg-white rounded-3xl p-4 shadow-2xl border border-pale-steel/30 transform hover:scale-105 transition-transform duration-500">
+                                    <img src="hero-contact.png" alt="Contact AmpLuxe Energy Solutions" class="w-full h-96 object-cover rounded-2xl">
+                                    
+                                    <!-- Floating Contact Card -->
+                                    <div class="absolute -bottom-6 -right-6 bg-highlight text-white p-6 rounded-2xl shadow-xl transform hover:scale-110 transition-transform duration-300">
+                                        <div class="text-center">
+                                            <i class="fas fa-headset text-2xl mb-2"></i>
+                                            <p class="font-bold">Expert Support</p>
+                                            <p class="text-xs opacity-90">Available Now</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            
+                            <!-- Background Decorative Elements -->
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-highlight/20 rounded-full"></div>
+                            <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-accent/20 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#contact-form" class="flex flex-col items-center text-secondary hover:text-highlight transition-colors duration-300">
+                    <span class="text-sm font-semibold mb-2">Get In Touch</span>
+                    <i class="fas fa-chevron-down text-xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Location Map & Contact Information Section -->
+        <section id="contact-map" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 text-center">
+                    <h2 class="text-5xl font-black text-dark mb-6">Find Us On The Map</h2>
+                    <p class="text-secondary text-lg">Visit our office in Mount Road, Chennai for a consultation</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Google Map -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-3xl overflow-hidden border border-pale-steel/30 shadow-2xl h-96 lg:h-full min-h-96">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3477024123045!2d80.22811599999999!3d13.047562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526fb0f0f0f0f0%3A0xf0f0f0f0f0f0f0f0!2sMount%20Road%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-3xl"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information Cards -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-4">Contact Information</h3>
+                            <p class="text-secondary text-sm mb-6">Get in touch with our expert team for all your electrical and solar energy needs.</p>
+                        </div>
+                        
+                        <!-- Office Address -->
+                        <div class="bg-pale-steel-light rounded-3xl p-6 border border-pale-steel/30 hover:shadow-lg transition-shadow duration-300">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 bg-highlight/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-map-marker-alt text-highlight text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-dark mb-2">Office Address</h4>
+                                    <p class="text-secondary text-xs">
+                                        AmpLuxe Energy<br>
+                                        Mount Road<br>
+                                        Chennai, TN
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Phone Numbers -->
+                        <div class="bg-pale-steel-light rounded-3xl p-6 border border-pale-steel/30 hover:shadow-lg transition-shadow duration-300">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 bg-highlight/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-phone text-highlight text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-dark mb-2">Phone</h4>
+                                    <p class="text-secondary text-xs">
+                                        <span class="block">+91 XXXXX XXXXX</span>
+                                        <span class="block">+91 XXXXX XXXXX</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email Addresses -->
+                        <div class="bg-pale-steel-light rounded-3xl p-6 border border-pale-steel/30 hover:shadow-lg transition-shadow duration-300">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 bg-highlight/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-envelope text-highlight text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-dark mb-2">Email</h4>
+                                    <p class="text-secondary text-xs">
+                                        <span class="block">info@ampluxe.com</span>
+                                        <span class="block">support@ampluxe.com</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Business Hours -->
+                        <div class="bg-highlight/10 rounded-3xl p-6 border border-highlight/20 hover:shadow-lg transition-shadow duration-300">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-clock text-highlight text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-dark mb-2">Hours</h4>
+                                    <p class="text-secondary text-xs">
+                                        <span class="block">Mon-Sat: 9AM - 6PM</span>
+                                        <span class="block text-highlight font-semibold">24/7 Emergency</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Areas Section -->
+        <section class="py-20 bg-pale-steel-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-6 py-2 rounded-full mb-6">
+                        <i class="fas fa-map text-highlight"></i>
+                        <span class="text-highlight font-semibold">Service Coverage</span>
+                    </div>
+                    <h2 class="text-5xl font-black text-dark mb-6">Areas We Serve</h2>
+                    <p class="text-secondary text-lg max-w-3xl mx-auto">
+                        Providing reliable electrical and solar energy solutions across major cities in India
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-3xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-city text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Chennai</h3>
+                        <p class="text-secondary">Complete electrical and solar services across all areas of Chennai</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-building text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Bangalore</h3>
+                        <p class="text-secondary">Professional electrical solutions for residential and commercial properties</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-home text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Mumbai</h3>
+                        <p class="text-secondary">Serving Mumbai and surrounding metropolitan areas</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-industry text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Delhi NCR</h3>
+                        <p class="text-secondary">Expert electrical and solar panel installation services</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-warehouse text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Hyderabad</h3>
+                        <p class="text-secondary">Comprehensive electrical solutions for modern infrastructure</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-map-marked-alt text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">Other Cities</h3>
+                        <p class="text-secondary">Expanding our services to major cities across India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-6 py-2 rounded-full mb-6">
+                        <i class="fas fa-star text-highlight"></i>
+                        <span class="text-highlight font-semibold">Why Choose Us</span>
+                    </div>
+                    <h2 class="text-5xl font-black text-dark mb-6">Why Work With AmpLuxe?</h2>
+                    <p class="text-secondary text-lg max-w-3xl mx-auto">
+                        Experience the difference with our professional approach and commitment to excellence
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-highlight/20 transition-colors duration-300">
+                            <i class="fas fa-clock text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">24/7 Support</h3>
+                        <p class="text-secondary">Round-the-clock emergency support for all your electrical needs</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-highlight/20 transition-colors duration-300">
+                            <i class="fas fa-certificate text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Licensed & Insured</h3>
+                        <p class="text-secondary">Fully licensed professionals with comprehensive insurance coverage</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-highlight/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-highlight/20 transition-colors duration-300">
+                            <i class="fas fa-thumbs-up text-highlight text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Quality Guarantee</h3>
+                        <p class="text-secondary">100% satisfaction guarantee on all our electrical services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-dark to-accent text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-5xl font-black mb-6">Ready to Get Started?</h2>
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Contact AmpLuxe Energy Solutions today for a free consultation and quote for your electrical or solar project.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="tel:+91XXXXXXXXXX" class="bg-highlight text-white px-10 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                    <a href="mailto:info@ampluxeenergy.com" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white hover:text-dark transition-all duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>Send Email</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                        <div>
+                            <span class="text-xl font-bold text-white">AmpLuxe</span>
+                            <p class="text-xs text-gray-400 -mt-1">Energy Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        AmpLuxe Energy Solutions LLP provides comprehensive and reliable solar and electrical services to power a sustainable future for commercial and residential clients across India.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-pale-steel/20 rounded-full flex items-center justify-center hover:bg-highlight transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pale-steel/20 rounded-full flex items-center justify-center hover:bg-highlight transition-colors duration-300">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pale-steel/20 rounded-full flex items-center justify-center hover:bg-highlight transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pale-steel/20 rounded-full flex items-center justify-center hover:bg-highlight transition-colors duration-300">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-highlight transition-colors duration-200">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="service-solar-panel.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Solar Panel Installation</a></li>
+                        <li><a href="service-electrical-wiring.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Electrical Wiring</a></li>
+                        <li><a href="service-meter-box.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Meter Box Installation</a></li>
+                        <li><a href="service-electrical-connection.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">New Electrical Connection</a></li>
+                        <li><a href="service-maintenance.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Maintenance Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 AmpLuxe Energy Solutions LLP. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-highlight text-sm transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-highlight text-sm transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-highlight text-sm transition-colors duration-200">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Services dropdown functionality
+            const servicesDropdownBtn = document.getElementById('services-dropdown-btn');
+            const servicesDropdownMenu = document.getElementById('services-dropdown-menu');
+            const servicesDropdownIcon = document.getElementById('services-dropdown-icon');
+            
+            servicesDropdownBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isVisible = !servicesDropdownMenu.classList.contains('opacity-0');
+                
+                if (isVisible) {
+                    // Hide dropdown
+                    servicesDropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                    servicesDropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                    servicesDropdownIcon.classList.remove('rotate-180');
+                } else {
+                    // Show dropdown
+                    servicesDropdownMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+                    servicesDropdownMenu.classList.add('opacity-100', 'visible', 'scale-100');
+                    servicesDropdownIcon.classList.add('rotate-180');
+                }
+            });
+            
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!servicesDropdownBtn.contains(e.target) && !servicesDropdownMenu.contains(e.target)) {
+                    servicesDropdownMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                    servicesDropdownMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                    servicesDropdownIcon.classList.remove('rotate-180');
+                }
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg', 'backdrop-blur-sm');
+                    navbar.classList.remove('border-b');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'backdrop-blur-sm');
+                    navbar.classList.add('border-b');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
