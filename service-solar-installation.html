@@ -149,22 +149,71 @@
         </div>
     </nav>
 <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-pale-steel-light">
+    <section class="pt-24 pb-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <div class="absolute -left-28 -top-24 w-80 h-80 bg-highlight rounded-full blur-3xl"></div>
+            <div class="absolute right-0 bottom-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+        </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
-                    <i class="fas fa-solar-panel"></i>
-                    <span>SOLAR INSTALLATION SERVICE</span>
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <!-- Left: Image -->
+                <div class="order-2 lg:order-1" data-animate="hero-left">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-pale-steel/30 transform translate-x-8 opacity-0 transition-all duration-700">
+                        <img src="solar_panel_installation.jpg" alt="Solar panel installation" class="w-full h-80 sm:h-[36rem] object-cover">
+                    </div>
+                    
                 </div>
-                <h1 class="text-5xl lg:text-6xl font-black text-dark leading-tight">
-                    Solar Panel Systems 
-                    <span class="block text-highlight">Installation</span>
-                </h1>
-                <p class="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                    Our end-to-end Solar Panel System Installation service offers energy freedom. We design, install, and secure permits for custom systems that suit your energy needs and roof layout.
-                </p>
+
+                <!-- Right: Copy & CTAs -->
+                <div class="order-1 lg:order-2 space-y-6 transform -translate-x-8 opacity-0 transition-all duration-700" data-animate="hero-right">
+                    <div class="inline-flex items-center space-x-3 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight w-max">
+                        <i class="fas fa-solar-panel"></i>
+                        <span>SOLAR INSTALLATION</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
+                        Professional Solar Installations
+                        <span class="block text-highlight">Built for performance & longevity</span>
+                    </h2>
+
+                    <p class="text-lg text-secondary max-w-xl">
+                        We deliver end-to-end solar solutions — from system design and permit handling to installation and aftercare. Our certified teams optimize performance and ensure safety at every step.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
+                        <a href="contact.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get a Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact-form" class="inline-flex items-center space-x-3 border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition">
+                            <span>Request Site Visit</span>
+                        </a>
+                    </div>
+
+                    
+                </div>
             </div>
         </div>
+
+        <script>
+            (function(){
+                const els = document.querySelectorAll('[data-animate]');
+                if(!els.length) return;
+                const obs = new IntersectionObserver((entries, o) => {
+                    entries.forEach(e => {
+                        if(e.isIntersecting){
+                            e.target.querySelector('.transform')?.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.querySelector('.transform')?.classList.add('translate-x-0','opacity-100');
+                            e.target.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.classList.add('translate-x-0','opacity-100');
+                            o.unobserve(e.target);
+                        }
+                    });
+                }, {threshold: 0.18});
+                els.forEach(el => obs.observe(el));
+            })();
+        </script>
     </section>
 
     <!-- Main Content -->

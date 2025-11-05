@@ -149,23 +149,81 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-pale-steel-light">
+    <!-- Hero Section (modern reversed split) -->
+    <section class="pt-24 pb-16 relative overflow-hidden bg-cover bg-center" style="background-image: url('image-1762336707025.png');">
+        <div class="absolute inset-0 opacity-6 pointer-events-none">
+           v>
+        </div>
+        <!-- subtle dark overlay for contrast -->
+        <div class="absolute inset-0 bg-black/35 pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <span>METER BOX INSTALLATION & UPGRADES</span>
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <!-- Left: image -->
+                
+
+                <!-- Right: copy & CTAs -->
+                <div class="order-1 lg:order-2 space-y-6 transform -translate-x-8 opacity-0 transition-all duration-700" data-animate="hero-right">
+                    <div class="inline-flex items-center space-x-3 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight w-max">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>METER BOX INSTALLATION</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                        Modern Meter Box Solutions
+                        <span class="block text-highlight">Accurate. Safe. Future-ready.</span>
+                    </h2>
+
+                    <p class="text-lg text-white/90 max-w-xl">
+                        Upgrade or install a high-quality meter box that handles current and future load requirements. We provide expert site assessment, compliant installations, and rapid commissioning.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
+                        <a href="contact.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get a Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact-form" class="inline-flex items-center space-x-3 border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition">
+                            <span>Request Site Visit</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-6 flex items-center gap-6">
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-white">20+</p>
+                            <p class="text-sm text-white/90">Years</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-white">500+</p>
+                            <p class="text-sm text-white/90">Projects</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-white">99%</p>
+                            <p class="text-sm text-white/90">Satisfaction</p>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="text-5xl lg:text-6xl font-black text-dark leading-tight">
-                    Meter Box 
-                    <span class="block text-highlight">Installation & Upgrades</span>
-                </h1>
-                <p class="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                    Reliable Power, Perfect Safety. Our Meter Box Installation & Upgrade services ensure your building’s power distribution is safe, efficient, and ready for modern demands.
-                </p>
             </div>
         </div>
+
+        <script>
+            (function(){
+                const els = document.querySelectorAll('[data-animate]');
+                if(!els.length) return;
+                const obs = new IntersectionObserver((entries, o) => {
+                    entries.forEach(e => {
+                        if(e.isIntersecting){
+                            e.target.querySelector('.transform')?.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.querySelector('.transform')?.classList.add('translate-x-0','opacity-100');
+                            e.target.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.classList.add('translate-x-0','opacity-100');
+                            o.unobserve(e.target);
+                        }
+                    });
+                }, {threshold: 0.18});
+                els.forEach(el => obs.observe(el));
+            })();
+        </script>
     </section>
 
     <!-- Main Content -->
