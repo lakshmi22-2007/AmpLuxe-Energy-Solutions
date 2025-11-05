@@ -47,13 +47,17 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-10">
-                    <a href="index.html" class="text-secondary hover:text-accent font-semibold relative group">
-                        HOME
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <a href="index.html" class="text-secondary hover:text-accent font-semibold group">
+                        <span class="relative inline-block">
+                            HOME
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                        </span>
                     </a>
-                    <a href="about.html" class="text-dark hover:text-accent font-semibold relative group">
-                        ABOUT US
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                    <a href="about.html" class="text-dark hover:text-accent font-semibold group">
+                        <span class="relative inline-block">
+                            ABOUT US
+                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                        </span>
                     </a>
                     
                      <div class="relative">
@@ -90,9 +94,11 @@
                         </div>
                     </div>
                     
-                    <a href="contact.html" class="text-secondary hover:text-accent font-semibold relative group">
-                        CONTACT
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <a href="contact.html" class="text-secondary hover:text-accent font-semibold group">
+                        <span class="relative inline-block">
+                            CONTACT
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                        </span>
                     </a>
                 </div>
                 
@@ -177,17 +183,17 @@
                     </div>
 
                     <!-- Key Stats -->
-                    <div class="grid grid-cols-3 gap-6 pt-8">
-                        <div class="space-y-2">
-                            <div class="text-4xl font-black text-highlight">20+</div>
+                    <div id="hero-stats" class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="space-y-2 text-center">
+                            <div class="text-4xl font-black text-highlight counter" data-target="20" data-suffix="+" aria-live="polite">0</div>
                             <p class="text-secondary font-semibold text-sm">Years Experience</p>
                         </div>
-                        <div class="space-y-2">
-                            <div class="text-4xl font-black text-highlight">500+</div>
+                        <div class="space-y-2 text-center">
+                            <div class="text-4xl font-black text-highlight counter" data-target="500" data-suffix="+" aria-live="polite">0</div>
                             <p class="text-secondary font-semibold text-sm">Happy Customers</p>
                         </div>
-                        <div class="space-y-2">
-                            <div class="text-4xl font-black text-highlight">100%</div>
+                        <div class="space-y-2 text-center">
+                            <div class="text-4xl font-black text-highlight counter" data-target="100" data-suffix="%" aria-live="polite">0</div>
                             <p class="text-secondary font-semibold text-sm">Satisfaction</p>
                         </div>
                     </div>
@@ -225,75 +231,120 @@
                     </p>
                 </div>
                 
-                <div class="flex flex-wrap justify-center gap-8">
-                    <!-- Service 1 -->
-                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
-                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
-                            <i class="fas fa-solar-panel text-highlight text-2xl"></i>
+                <div id="core-services" class="flex flex-wrap justify-center gap-8 core-services">
+                    <!-- Step 1 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] service-step bg-white rounded-3xl p-8 text-center shadow-lg transition-shadow duration-300 border border-pale-steel/30 hover:scale-105 hover:shadow-2xl transform-gpu" data-step="0">
+                        <div class="h-1 bg-pale-steel-light rounded-full overflow-hidden mb-6">
+                            <div class="step-fill bg-accent h-1 w-0 transition-all duration-700 ease-out"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4">Solar Panel Systems Installation</h3>
-                        <p class="text-secondary mb-8 leading-relaxed">
-                            Our end-to-end Solar Panel System Installation service offers energy freedom. We design, install, and secure permits for custom systems that suit your energy needs and roof layout.
-                        </p>
-                        <p class="text-secondary leading-relaxed">
-                            Generate your own power and enjoy the peace of mind of a sustainable, long-term investment for residential, commercial office spaces, and large commercial buildings.
-                        </p>
+                        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 relative">
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 80 80" aria-hidden="true">
+                                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
+                                <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
+                            </svg>
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                                <i class="fas fa-solar-panel text-2xl"></i>
+                                
+                            </div>
+                        </div>
+                        <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Solar Panel Systems Installation</h3>
+                            <p class="text-secondary mb-8 leading-relaxed">
+                                Our end-to-end Solar Panel System Installation service offers energy freedom. We design, install, and secure permits for custom systems that suit your energy needs and roof layout.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Service 2 -->
-                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
-                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
-                            <i class="fas fa-bolt text-highlight text-2xl"></i>
+                    <!-- Step 2 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] service-step bg-white rounded-3xl p-8 text-center shadow-lg transition-shadow duration-300 border border-pale-steel/30 hover:scale-105 hover:shadow-2xl transform-gpu" data-step="1">
+                        <div class="h-1 bg-pale-steel-light rounded-full overflow-hidden mb-6">
+                            <div class="step-fill bg-accent h-1 w-0 transition-all duration-700 ease-out"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4">Electrical Wiring Services</h3>
-                        <p class="text-secondary mb-8 leading-relaxed">
-                            Reliable Power, Perfect Safety. Our Electrical Wiring Services ensure your building's wiring is safe and efficient, whether you're building new or renovating.
-                        </p>
-                        <p class="text-secondary leading-relaxed">
-                            Our certified electricians use high-grade, compliant materials to install robust wiring that meets all safety standards, supporting modern power demands.
-                        </p>
+                        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 relative">
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 80 80" aria-hidden="true">
+                                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
+                                <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
+                            </svg>
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                                <i class="fas fa-bolt text-2xl"></i>
+                                
+                            </div>
+                        </div>
+                        <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Electrical Wiring Services</h3>
+                            <p class="text-secondary mb-8 leading-relaxed">
+                                Reliable Power, Perfect Safety. Our Electrical Wiring Services ensure your building's wiring is safe and efficient, whether you're building new or renovating.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Service 3 -->
-                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
-                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
-                            <i class="fas fa-tachometer-alt text-highlight text-2xl"></i>
+                    <!-- Step 3 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] service-step bg-white rounded-3xl p-8 text-center shadow-lg transition-shadow duration-300 border border-pale-steel/30 hover:scale-105 hover:shadow-2xl transform-gpu" data-step="2">
+                        <div class="h-1 bg-pale-steel-light rounded-full overflow-hidden mb-6">
+                            <div class="step-fill bg-accent h-1 w-0 transition-all duration-700 ease-out"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4">Meter Box Installation & Upgrades</h3>
-                        <p class="text-secondary mb-8 leading-relaxed">
-                            "Is your old meter box a risk or a bottleneck?". We offer expert meter box installation and upgrades to safely manage your property's power intake.
-                        </p>
-                        <p class="text-secondary leading-relaxed">
-                            This is crucial for handling the load of new air conditioners, electric vehicle chargers, or a new solar system.
-                        </p>
+                        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 relative">
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 80 80" aria-hidden="true">
+                                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
+                                <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
+                            </svg>
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                                <i class="fas fa-tachometer-alt text-2xl"></i>
+                                
+                            </div>
+                        </div>
+                        <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Meter Box Installation & Upgrades</h3>
+                            <p class="text-secondary mb-8 leading-relaxed">
+                                Expert meter box installation and upgrades to safely manage your property's power intake and support modern energy demands.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Service 4 -->
-                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
-                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
-                            <i class="fas fa-plug text-highlight text-2xl"></i>
+                    <!-- Step 4 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] service-step bg-white rounded-3xl p-8 text-center shadow-lg transition-shadow duration-300 border border-pale-steel/30 hover:scale-105 hover:shadow-2xl transform-gpu" data-step="3">
+                        <div class="h-1 bg-pale-steel-light rounded-full overflow-hidden mb-6">
+                            <div class="step-fill bg-accent h-1 w-0 transition-all duration-700 ease-out"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4">New Electrical Connection Support</h3>
-                        <p class="text-secondary mb-8 leading-relaxed">
-                            We simplify the process of getting your power connected when building a new home or business. We handle all the paperwork and technical work.
-                        </p>
-                        <p class="text-secondary leading-relaxed">
-                            From applying for your connection to the final installation and safety check. We ensure your home or business is powered up quickly and stress-free.
-                        </p>
+                        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 relative">
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 80 80" aria-hidden="true">
+                                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
+                                <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
+                            </svg>
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                                <i class="fas fa-plug text-2xl"></i>
+                                
+                            </div>
+                        </div>
+                        <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
+                            <h3 class="text-2xl font-bold text-dark mb-4">New Electrical Connection Support</h3>
+                            <p class="text-secondary mb-8 leading-relaxed">
+                                We simplify the process of getting your power connected — from paperwork to final installation and safety checks.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Service 5 -->
-                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-pale-steel/30">
-                        <div class="w-20 h-20 bg-pale-steel-light rounded-3xl flex items-center justify-center mx-auto mb-8">
-                            <i class="fas fa-tools text-highlight text-2xl"></i>
+                    <!-- Step 5 -->
+                    <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] service-step bg-white rounded-3xl p-8 text-center shadow-lg transition-shadow duration-300 border border-pale-steel/30 hover:scale-105 hover:shadow-2xl transform-gpu" data-step="4">
+                        <div class="h-1 bg-pale-steel-light rounded-full overflow-hidden mb-6">
+                            <div class="step-fill bg-accent h-1 w-0 transition-all duration-700 ease-out"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4">Maintenance Works</h3>
-                        <p class="text-secondary mb-8 leading-relaxed">
-                            Protect your energy investment. Our comprehensive Maintenance Works cover routine inspections, preventative care, performance checks, and rapid repairs for all our installed systems.
-                        </p>
-                        <p class="text-secondary leading-relaxed">
-                            A small investment in maintenance today ensures maximum efficiency, safety, and system longevity, maximising your savings.
-                        </p>
+                        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 relative">
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 80 80" aria-hidden="true">
+                                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
+                                <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
+                            </svg>
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                                <i class="fas fa-tools text-2xl"></i>
+                                
+                            </div>
+                        </div>
+                        <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Maintenance Works</h3>
+                            <p class="text-secondary mb-8 leading-relaxed">
+                                Routine inspections, preventative care, and rapid repairs to keep your systems safe and performing at their best.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -464,6 +515,141 @@
                 }
             });
         });
+
+        // Hero stats counters — animate when in view
+        (function() {
+            const counters = Array.from(document.querySelectorAll('.counter'));
+            if (!counters.length) return;
+
+            function animateCounter(el, target, suffix) {
+                const duration = 1200;
+                const start = performance.now();
+
+                function frame(now) {
+                    const t = Math.min(1, (now - start) / duration);
+                    const eased = 1 - Math.pow(1 - t, 3);
+                    const val = Math.round(eased * target);
+                    el.textContent = val + (suffix || '');
+                    if (t < 1) requestAnimationFrame(frame);
+                }
+
+                requestAnimationFrame(frame);
+            }
+
+            const statsContainer = document.getElementById('hero-stats');
+            const obs = new IntersectionObserver((entries, o) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(c => {
+                            if (c.dataset.animated) return;
+                            const target = parseInt(c.getAttribute('data-target')) || 0;
+                            const suffix = c.getAttribute('data-suffix') || '';
+                            animateCounter(c, target, suffix);
+                            c.dataset.animated = 'true';
+                        });
+                        o.unobserve(statsContainer);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            obs.observe(statsContainer);
+        })();
+
+        // Core Services - dynamic SVG ring + reveal animation
+        (function() {
+            const core = document.getElementById('core-services');
+            if (!core) return;
+
+            const steps = Array.from(core.querySelectorAll('.service-step'));
+
+            function animateStep(index) {
+                const card = steps[index];
+                if (!card) return;
+
+                const circle = card.querySelector('.progress-circle');
+                const percentEl = card.querySelector('.progress-percent');
+                const iconInner = card.querySelector('.icon-inner');
+                const content = card.querySelector('.step-content');
+
+                const radius = 34;
+                const circumference = 2 * Math.PI * radius; // ~213.628
+
+                // prepare for replay: reset
+                if (circle) {
+                    circle.style.transition = '';
+                    circle.style.strokeDasharray = String(circumference);
+                    circle.style.strokeDashoffset = String(circumference);
+                }
+                if (percentEl) percentEl.textContent = '0%';
+                if (content) {
+                    content.classList.remove('opacity-100', 'translate-y-0');
+                    content.classList.add('opacity-0', 'translate-y-3');
+                }
+
+                // animate progress with requestAnimationFrame
+                const duration = 900;
+                const start = performance.now();
+
+                function frame(now) {
+                    const elapsed = now - start;
+                    const t = Math.min(1, elapsed / duration);
+                    const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+
+                    if (circle) {
+                        circle.style.strokeDashoffset = String(Math.round(circumference * (1 - eased)));
+                    }
+
+                    if (percentEl) {
+                        const val = Math.round(eased * 100);
+                        percentEl.textContent = val + '%';
+                    }
+
+                    if (t < 1) {
+                        requestAnimationFrame(frame);
+                    } else {
+                        // finalize styles
+                        if (iconInner) {
+                            iconInner.classList.add('bg-accent');
+                            iconInner.classList.add('text-white');
+                            iconInner.style.transform = 'scale(1.06)';
+                        }
+                        if (content) {
+                            content.classList.remove('opacity-0', 'translate-y-3');
+                            content.classList.add('opacity-100', 'translate-y-0');
+                        }
+                    }
+                }
+
+                requestAnimationFrame(frame);
+
+                // replay on hover/click for this card
+                card.addEventListener('mouseenter', () => {
+                    // reset then replay
+                    if (circle) circle.style.strokeDashoffset = String(circumference);
+                    if (percentEl) percentEl.textContent = '0%';
+                    if (content) {
+                        content.classList.remove('opacity-100', 'translate-y-0');
+                        content.classList.add('opacity-0', 'translate-y-3');
+                    }
+                    // small timeout to allow reset
+                    setTimeout(() => {
+                        requestAnimationFrame(frame);
+                    }, 50);
+                }, { once: false });
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // animate steps sequentially with stagger
+                        steps.forEach((_, i) => setTimeout(() => animateStep(i), i * 350));
+                        obs.unobserve(core);
+                    }
+                });
+            }, { threshold: 0.25 });
+
+            observer.observe(core);
+        })();
     </script>
 </body>
 </html>

@@ -47,21 +47,26 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-10">
-                    <a href="index.html" class="text-secondary hover:text-accent font-semibold relative group">
-                        HOME
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <a href="index.html" class="text-secondary hover:text-accent font-semibold group">
+                        <span class="relative inline-block">
+                            HOME
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                        </span>
                     </a>
-                    <a href="about.html" class="text-secondary hover:text-accent font-semibold relative group">
-                        ABOUT US
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <a href="about.html" class="text-secondary hover:text-accent font-semibold group">
+                        <span class="relative inline-block">
+                            ABOUT US
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                        </span>
                     </a>
                     
                     <!-- Services Dropdown -->
                     <div class="relative">
-                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-dark hover:text-accent font-semibold relative">
-                            <span>SERVICES</span>
+                        <button id="services-dropdown-btn" class="flex items-center space-x-2 text-dark hover:text-accent font-semibold">
+                            <span class="relative inline-block">SERVICES
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                            </span>
                             <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
-                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
                         </button>
                         
                         <!-- Dropdown Menu -->
@@ -92,9 +97,11 @@
                         </div>
                     </div>
                     
-                    <a href="contact.html" class="text-secondary hover:text-accent font-semibold relative group">
-                        CONTACT
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <a href="contact.html" class="text-secondary hover:text-accent font-semibold group">
+                        <span class="relative inline-block">
+                            CONTACT
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                        </span>
                     </a>
                 </div>
                 
@@ -115,19 +122,20 @@
             </div>
         </div>
         
-       <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-pale-steel/30">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-pale-steel/30">
             <div class="px-4 py-6 space-y-4">
-                <a href="index.html" class="block px-4 py-2 text-dark font-semibold rounded-lg">HOME</a>
+                <a href="index.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">HOME</a>
                 <a href="about.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">ABOUT US</a>
                 
                 <!-- Mobile Services Dropdown -->
                 <div class="space-y-2">
-                    <button id="mobile-services-btn" class="flex items-center justify-between w-full px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">
+                    <button id="mobile-services-btn" class="flex items-center justify-between w-full px-4 py-2 text-dark font-semibold rounded-lg">
                         <span>SERVICES</span>
                         <i id="mobile-services-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
                     </button>
-                    <div id="mobile-services-menu" class="hidden bg-pale-steel-light rounded-lg ml-4 mr-2">
-                        <a href="service-solar-installation.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Solar Panel Installation</a>
+                    <div id="mobile-services-menu" class="bg-pale-steel-light rounded-lg ml-4 mr-2">
+                        <a href="service-solar-installation.html" class="block px-4 py-2 text-sm text-dark font-semibold">Solar Panel Installation</a>
                         <a href="service-electrical-wiring.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Electrical Wiring</a>
                         <a href="service-meter-box.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Meter Box Installation</a>
                         <a href="service-electrical-connection.html" class="block px-4 py-2 text-sm text-secondary hover:text-accent">Electrical Connection</a>
@@ -140,8 +148,7 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section class="pt-24 pb-16 bg-pale-steel-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-6">
@@ -394,6 +401,8 @@
         </div>
     </footer>
 
+    
+
     <!-- Scripts -->
     <script>
         // Mobile Menu Toggle
@@ -402,6 +411,16 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile Services Dropdown
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesIcon = document.getElementById('mobile-services-icon');
+        
+        mobileServicesBtn.addEventListener('click', () => {
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesIcon.classList.toggle('rotate-180');
         });
 
         // Services Dropdown Toggle
