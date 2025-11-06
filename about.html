@@ -223,7 +223,7 @@
             <div class="mb-20">
                 <div class="text-center mb-16">
                     <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-6">
-                        <span>🔧 OUR SERVICES</span>
+                        <span>OUR SERVICES</span>
                     </div>
                     <h2 class="text-5xl font-black text-dark">Core Services</h2>
                     <p class="text-xl text-secondary max-w-3xl mx-auto mt-6">
@@ -349,14 +349,103 @@
                 </div>
             </div>
 
-            <!-- CTA Section -->
-            <div class="text-center bg-white rounded-3xl p-12 shadow-xl border border-pale-steel/30">
-                <h2 class="text-5xl font-black text-dark mb-6">Ready to Power Your Future?</h2>
-                <p class="text-xl text-secondary mb-8">Contact us today for a free consultation and personalized energy solution.</p>
-                <a href="contact.html" class="bg-highlight text-white px-10 py-4 rounded-full hover:shadow-2xl transition-all inline-flex items-center space-x-3 font-bold">
-                    <i class="fas fa-phone"></i>
-                    <span>Get Started Today</span>
-                </a>
+            
+        </div>
+    </section>
+    
+    <!-- FAQs -->
+    <section class="py-12 bg-light">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-black text-center mb-6">FAQs</h2>
+
+            <div class="space-y-3">
+                <details class="rounded-2xl bg-gray-100 p-4" open>
+                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                        <span>How do I access AI Co-Founder and Co-Founder Actions?</span>
+                        <span class="text-xl font-bold faq-icon">+</span>
+                    </summary>
+                    <div class="mt-3 text-secondary">
+                        Access is available via your account dashboard — navigate to the "Co-Founder" section and enable Actions from the settings. Contact support if you need assistance.
+                    </div>
+                </details>
+
+                <details class="rounded-2xl bg-gray-100 p-4">
+                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                        <span>What kind of questions can I ask AI Co-Founder?</span>
+                        <span class="text-xl font-bold faq-icon">+</span>
+                    </summary>
+                    <div class="mt-3 text-secondary">
+                        You can ask strategic, operational, and technical questions related to your project — from planning and prioritisation to example code and marketing ideas.
+                    </div>
+                </details>
+
+                <details class="rounded-2xl bg-gray-100 p-4">
+                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                        <span>What can Co-Founder Actions do?</span>
+                        <span class="text-xl font-bold faq-icon">+</span>
+                    </summary>
+                    <div class="mt-3 text-secondary">
+                        Actions can generate content, create tasks, suggest code changes, and help automate common workflows. Capabilities depend on your subscription level.
+                    </div>
+                </details>
+
+                <details class="rounded-2xl bg-gray-100 p-4">
+                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                        <span>Does AI Co-Founder provide legal or tax advice?</span>
+                        <span class="text-xl font-bold faq-icon">+</span>
+                    </summary>
+                    <div class="mt-3 text-secondary">
+                        No — AI Co-Founder provides general guidance and templates but does not replace professional legal, tax, or financial advice. Consult a qualified professional for those matters.
+                    </div>
+                </details>
+            </div>
+
+            
+        </div>
+
+        <script>
+            // Toggle FAQ icons (+ / -) when details open/close
+            (function(){
+                const faqs = document.querySelectorAll('details');
+                if(!faqs.length) return;
+                faqs.forEach(d => {
+                    const icon = d.querySelector('.faq-icon');
+                    const update = () => icon && (icon.textContent = d.open ? '−' : '+');
+                    d.addEventListener('toggle', update);
+                    // init
+                    update();
+                });
+            })();
+        </script>
+    </section>
+    <!-- CTA / Ready to Go Connection Hero -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center">
+                <!-- Left: Text -->
+                <div class="p-10 sm:p-16">
+                    <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Need a New Electrical Connection?</h2>
+                    <p class="text-lg text-secondary mb-6">We handle everything from the application to the final commissioning — fast, compliant, and stress-free. Contact us for a free consultation.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="inline-flex items-center justify-center bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get Free Consultation</span>
+                            <i class="fas fa-arrow-right ml-3"></i>
+                        </a>
+
+                        <a href="tel:+91XXXXXXXXX" class="inline-flex items-center justify-center border-2 border-highlight text-highlight px-6 py-3 rounded-full font-semibold hover:bg-highlight hover:text-white transition">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>Call Us Now</span>
+                        </a>
+                    </div>
+
+                    <p class="text-sm text-secondary mt-6">Free site assessment, application support, and clear pricing. We'll coordinate with utilities and ensure your connection is safe and compliant.</p>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="p-6 sm:p-10 bg-[#fff6d6] flex items-center justify-center">
+                    <img src="hero-about.png" alt="Electrical connection" class="w-full max-w-md h-72 sm:h-96 object-contain">
+                </div>
             </div>
         </div>
     </section>
