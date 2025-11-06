@@ -149,23 +149,80 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-pale-steel-light">
+    <!-- Hero Section (reversed split, image left / copy right) -->
+    <section class="pt-24 pb-16 relative overflow-hidden">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
-                    <i class="fas fa-home"></i>
-                    <span>NEW ELECTRICAL CONNECTION SUPPORT</span>
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <!-- Left: Image -->
+                <div class="order-2 lg:order-2" data-animate="hero-left">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-pale-steel/30 transform translate-x-8 opacity-0 transition-all duration-700">
+                        <img src="image-1762336707025.png" alt="Electrical connection" class="w-full h-80 sm:h-[36rem] object-cover">
+                    </div>
                 </div>
-                <h1 class="text-5xl lg:text-6xl font-black text-dark leading-tight">
-                    New Electrical Connection
-                    <span class="block text-highlight">Support & Installation</span>
-                </h1>
-                <p class="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                    We simplify the process of getting your power connected when building a new home or business. From paperwork to installation, we make it quick and stress-free.
-                </p>
+
+                <!-- Right: copy & CTAs -->
+                <div class="order-1 lg:order-1 space-y-6 transform -translate-x-8 opacity-0 transition-all duration-700" data-animate="hero-right">
+                    <div class="inline-flex items-center space-x-3 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight w-max">
+                        <i class="fas fa-home"></i>
+                        <span>NEW ELECTRICAL CONNECTION</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
+                        Fast & Compliant Power Connection
+                        <span class="block text-highlight">From Application to Commissioning</span>
+                    </h2>
+
+                    <p class="text-lg text-secondary max-w-xl">
+                        We manage the full process — paperwork, coordination with utilities, and safe installation — so your new home or business gets power with minimal hassle.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
+                        <a href="contact.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get a Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact-form" class="inline-flex items-center space-x-3 border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition">
+                            <span>Request Site Visit</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-6 flex items-center gap-6">
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-dark">10+</p>
+                            <p class="text-sm text-secondary">Years</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-dark">1000+</p>
+                            <p class="text-sm text-secondary">Connections</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-extrabold text-dark">99%</p>
+                            <p class="text-sm text-secondary">Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <script>
+            (function(){
+                const els = document.querySelectorAll('[data-animate]');
+                if(!els.length) return;
+                const obs = new IntersectionObserver((entries, o) => {
+                    entries.forEach(e => {
+                        if(e.isIntersecting){
+                            e.target.querySelector('.transform')?.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.querySelector('.transform')?.classList.add('translate-x-0','opacity-100');
+                            e.target.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.classList.add('translate-x-0','opacity-100');
+                            o.unobserve(e.target);
+                        }
+                    });
+                }, {threshold: 0.18});
+                els.forEach(el => obs.observe(el));
+            })();
+        </script>
     </section>
 
     <!-- Main Content -->
@@ -245,74 +302,99 @@
         </div>
     </section>
 
-    <!-- Service Categories -->
-    <section class="py-20 bg-pale-steel-light">
+    <!-- Service Categories (pricing-style cards on brand yellow) -->
+    <section class="py-20" style="background-color:#e4bd5a;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-dark mb-6">
-                    Our Electrical Connection Services
-                </h2>
-                <p class="text-xl text-secondary max-w-3xl mx-auto">
-                    End-to-end support for new electrical connections for homes, offices, and commercial buildings.
-                </p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Our Electrical Connection Services</h2>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto mb-6">End-to-end electrical connection services for homes, offices, and commercial sites — we handle paperwork, installation and commissioning.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- New Home Connection -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <!-- Card 1: New Home Connection -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm mb-4">Residential</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">New Home Connection</h3>
+                        <p class="text-dark/70 mb-6">Complete handling of applications, on-site wiring and final inspection to power your new home quickly and safely.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">New Home Connection</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Hassle-free electrical connection for new homes, including paperwork, installation, and safety checks.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Turnkey</div>
+                                <div class="text-sm font-semibold text-dark">Paperwork + Install</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Business & Office Connection -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-building text-green-600 text-2xl"></i>
+                <!-- Card 2: Business & Office -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-green-700 px-4 py-2 rounded-full text-sm mb-4">Commercial</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">Business & Office Connection</h3>
+                        <p class="text-dark/70 mb-6">Fast coordination with utilities for reliable connections to power commercial spaces and offices.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Business & Office Connection</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Fast and reliable electrical connection for offices and commercial spaces, managed from start to finish.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Rapid</div>
+                                <div class="text-sm font-semibold text-dark">Utility Liaison</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Commercial & Industrial Connection -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-yellow-600 text-2xl"></i>
+                <!-- Card 3: Commercial & Industrial -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-green-700 px-4 py-2 rounded-full text-sm mb-4">Industrial</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">Commercial & Industrial</h3>
+                        <p class="text-dark/70 mb-6">High-capacity connection solutions with compliance and safety for larger sites and installations.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Commercial & Industrial</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        End-to-end support for large commercial and industrial electrical connections, including compliance and safety.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Heavy</div>
+                                <div class="text-sm font-semibold text-dark">High Load</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-accent">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="space-y-8">
-                <h2 class="text-4xl font-black text-white">
-                    Need a New Electrical Connection?
-                </h2>
-                <p class="text-xl text-white/90 leading-relaxed">
-                    Let us handle the paperwork and installation for your new home or business. Contact us today for a quick, safe, and stress-free connection.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="contact.html" class="bg-white text-accent px-10 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-3">
-                        <span>Get Free Consultation</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="tel:+91XXXXXXXXX" class="border-2 border-white text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-accent transition-all duration-300 inline-flex items-center justify-center space-x-3">
-                        <i class="fas fa-phone"></i>
-                        <span>Call Us Now</span>
-                    </a>
+    <!-- CTA / Ready to Go Connection Hero -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center">
+                <!-- Left: Text -->
+                <div class="p-10 sm:p-16">
+                    <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Need a New Electrical Connection?</h2>
+                    <p class="text-lg text-secondary mb-6">We handle everything from the application to the final commissioning — fast, compliant, and stress-free. Contact us for a free consultation.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="inline-flex items-center justify-center bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get Free Consultation</span>
+                            <i class="fas fa-arrow-right ml-3"></i>
+                        </a>
+
+                        <a href="tel:+91XXXXXXXXX" class="inline-flex items-center justify-center border-2 border-highlight text-highlight px-6 py-3 rounded-full font-semibold hover:bg-highlight hover:text-white transition">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>Call Us Now</span>
+                        </a>
+                    </div>
+
+                    <p class="text-sm text-secondary mt-6">Free site assessment, application support, and clear pricing. We'll coordinate with utilities and ensure your connection is safe and compliant.</p>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="p-6 sm:p-10 bg-[#fff6d6] flex items-center justify-center">
+                    <img src="image-1762336707025.png" alt="Electrical connection" class="w-full max-w-md h-72 sm:h-96 object-contain">
                 </div>
             </div>
         </div>

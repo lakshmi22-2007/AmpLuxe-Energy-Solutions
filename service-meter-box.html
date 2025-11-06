@@ -150,31 +150,30 @@
     </nav>
 
     <!-- Hero Section (modern reversed split) -->
-    <section class="pt-24 pb-16 relative overflow-hidden bg-cover bg-center" style="background-image: url('image-1762336707025.png');">
-        <div class="absolute inset-0 opacity-6 pointer-events-none">
-           v>
-        </div>
-        <!-- subtle dark overlay for contrast -->
-        <div class="absolute inset-0 bg-black/35 pointer-events-none"></div>
+    <section class="pt-24 pb-16 relative overflow-hidden">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
-                <!-- Left: image -->
-                
+                <!-- Left: Image -->
+                <div class="order-2 lg:order-2" data-animate="hero-left">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-pale-steel/30 transform translate-x-8 opacity-0 transition-all duration-700">
+                        <img src="image-1762336707025.png" alt="Meter box installation" class="w-full h-80 sm:h-[36rem] object-cover">
+                    </div>
+                </div>
 
                 <!-- Right: copy & CTAs -->
-                <div class="order-1 lg:order-2 space-y-6 transform -translate-x-8 opacity-0 transition-all duration-700" data-animate="hero-right">
+                <div class="order-1 lg:order-1 space-y-6 transform -translate-x-8 opacity-0 transition-all duration-700" data-animate="hero-right">
                     <div class="inline-flex items-center space-x-3 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight w-max">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>METER BOX INSTALLATION</span>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
                         Modern Meter Box Solutions
                         <span class="block text-highlight">Accurate. Safe. Future-ready.</span>
                     </h2>
 
-                    <p class="text-lg text-white/90 max-w-xl">
+                    <p class="text-lg text-secondary max-w-xl">
                         Upgrade or install a high-quality meter box that handles current and future load requirements. We provide expert site assessment, compliant installations, and rapid commissioning.
                     </p>
 
@@ -190,16 +189,16 @@
 
                     <div class="mt-6 flex items-center gap-6">
                         <div class="text-center">
-                            <p class="text-2xl font-extrabold text-white">20+</p>
-                            <p class="text-sm text-white/90">Years</p>
+                            <p class="text-2xl font-extrabold text-dark">20+</p>
+                            <p class="text-sm text-secondary">Years</p>
                         </div>
                         <div class="text-center">
-                            <p class="text-2xl font-extrabold text-white">500+</p>
-                            <p class="text-sm text-white/90">Projects</p>
+                            <p class="text-2xl font-extrabold text-dark">500+</p>
+                            <p class="text-sm text-secondary">Projects</p>
                         </div>
                         <div class="text-center">
-                            <p class="text-2xl font-extrabold text-white">99%</p>
-                            <p class="text-sm text-white/90">Satisfaction</p>
+                            <p class="text-2xl font-extrabold text-dark">99%</p>
+                            <p class="text-sm text-secondary">Satisfaction</p>
                         </div>
                     </div>
                 </div>
@@ -303,74 +302,99 @@
         </div>
     </section>
 
-    <!-- Service Categories -->
-    <section class="py-20 bg-pale-steel-light">
+    <!-- Service Categories (pricing-style cards on brand yellow) -->
+    <section class="py-20" style="background-color:#e4bd5a;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-dark mb-6">
-                    Our Meter Box Services
-                </h2>
-                <p class="text-xl text-secondary max-w-3xl mx-auto">
-                    Comprehensive meter box solutions for all types of properties and power requirements.
-                </p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Our Meter Box Services</h2>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto mb-6">Professional meter box installations and upgrades tailored to homes, commercial properties, and industrial sites — built for safety and reliability.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- New Installation -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-plus-square text-green-600 text-2xl"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <!-- Card 1: New Installation -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm mb-4">New Builds</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">New Installation</h3>
+                        <p class="text-dark/70 mb-6">End-to-end meter box installation for new properties with compliant wiring and professional commissioning.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">New Installation</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Complete meter box installation for new buildings, ensuring safe and reliable power distribution from the start.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Turnkey</div>
+                                <div class="text-sm font-semibold text-dark">Design + Install</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Upgrades & Expansion -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-arrow-up text-blue-600 text-2xl"></i>
+                <!-- Card 2: Upgrades & Expansion -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-green-700 px-4 py-2 rounded-full text-sm mb-4">Upgrade</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">Upgrades & Expansion</h3>
+                        <p class="text-dark/70 mb-6">Upgrade meter boxes to support higher loads and future expansions while meeting all safety codes.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Upgrades & Expansion</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Upgrade existing meter boxes to support higher loads and future expansion, meeting all safety and code requirements.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Safe</div>
+                                <div class="text-sm font-semibold text-dark">Code-Approved</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Commercial & Industrial -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-yellow-600 text-2xl"></i>
+                <!-- Card 3: Commercial & Industrial -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-green-700 px-4 py-2 rounded-full text-sm mb-4">Industrial</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">Commercial & Industrial</h3>
+                        <p class="text-dark/70 mb-6">High-capacity meter box solutions for offices, warehouses and industrial sites with monitoring options.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Commercial & Industrial</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Heavy-duty meter box solutions for commercial and industrial facilities with high power demands.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Heavy</div>
+                                <div class="text-sm font-semibold text-dark">High Load</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-accent">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="space-y-8">
-                <h2 class="text-4xl font-black text-white">
-                    Need Meter Box Installation or Upgrade?
-                </h2>
-                <p class="text-xl text-white/90 leading-relaxed">
-                    Trust our certified electricians for safe, reliable, and code-compliant meter box installations and upgrades. Contact us today for your project needs.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="contact.html" class="bg-white text-accent px-10 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-3">
-                        <span>Get Free Consultation</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="tel:+91XXXXXXXXX" class="border-2 border-white text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-accent transition-all duration-300 inline-flex items-center justify-center space-x-3">
-                        <i class="fas fa-phone"></i>
-                        <span>Call Us Now</span>
-                    </a>
+    <!-- CTA / Ready to Go Meter Box Hero -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center">
+                <!-- Left: Text -->
+                <div class="p-10 sm:p-16">
+                    <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Ready for a Meter Box Upgrade?</h2>
+                    <p class="text-lg text-secondary mb-6">Contact us today for a free consultation and take the first step towards a safe, code-compliant meter box installation or upgrade.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="inline-flex items-center justify-center bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get Free Consultation</span>
+                            <i class="fas fa-arrow-right ml-3"></i>
+                        </a>
+
+                        <a href="tel:+91XXXXXXXXX" class="inline-flex items-center justify-center border-2 border-highlight text-highlight px-6 py-3 rounded-full font-semibold hover:bg-highlight hover:text-white transition">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>Call Us Now</span>
+                        </a>
+                    </div>
+
+                    <p class="text-sm text-secondary mt-6">Free site assessment, system sizing, and transparent pricing. We'll help you choose the right equipment and upgrades for your needs.</p>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="p-6 sm:p-10 bg-[#fff6d6] flex items-center justify-center">
+                    <img src="image-1762336707025.png" alt="Meter box installation" class="w-full max-w-md h-72 sm:h-96 object-contain">
                 </div>
             </div>
         </div>

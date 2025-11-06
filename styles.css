@@ -1,0 +1,88 @@
+/* Site design system - styles.css
+   - Small design token set and a few reusable component styles
+   - Loaded as a sample site-wide stylesheet in index.html
+*/
+:root{
+  --highlight: #e4bd5a;
+  --accent: #475569;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --muted: #64748b;
+  --card-radius: 16px;
+  --card-elevation: 0 10px 30px rgba(30,41,59,0.06);
+}
+
+/* Base tweaks */
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+/* Hero sample treatment used on index and sample pages */
+.hero{
+  background: linear-gradient(180deg, rgba(228,189,90,0.06) 0%, rgba(71,85,105,0.02) 100%);
+  border-bottom: 1px solid rgba(30,41,59,0.03);
+}
+
+.hero h1, .hero h2{ /* subtle visual emphasis */
+  letter-spacing: -0.02em;
+}
+
+/* Buttons (simple helpers that complement Tailwind utilities) */
+.btn-primary{
+  background: var(--highlight);
+  color: #0b0b0b;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(155,109,0,0.12);
+}
+
+.btn-outline{
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid rgba(71,85,105,0.12);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Card component used for pricing/service cards */
+.card{
+  background: #ffffff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-elevation);
+  padding: 1.25rem;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card .badge{
+  display: inline-block;
+  background: #f3f4f6;
+  color: var(--muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Small responsive helpers */
+@media (max-width: 640px){
+  .hero{ padding-top: 2.25rem; padding-bottom: 2.25rem; }
+}
+
+/* Utility for the new sample full-bleed brand strip */
+.brand-strip{
+  background: var(--highlight);
+  color: #111;
+}
+
+/* Accessibility focus outlines */
+:focus{
+  outline: 3px solid rgba(228,189,90,0.25);
+  outline-offset: 2px;
+}

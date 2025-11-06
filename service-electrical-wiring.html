@@ -149,23 +149,70 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-pale-steel-light">
+    <!-- Hero Section (split) -->
+    <section class="pt-24 pb-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <div class="absolute -left-28 -top-24 w-80 h-80 bg-highlight rounded-full blur-3xl"></div>
+            <div class="absolute right-0 bottom-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+        </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
-                    <i class="fas fa-plug"></i>
-                    <span>ELECTRICAL WIRING SERVICE</span>
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <!-- Left: Image -->
+                <div class="order-2 lg:order-1" data-animate="hero-left">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-pale-steel/30 transform translate-x-8 opacity-0 transition-all duration-700">
+                        <img src="businessmen.jpg" alt="Electrical wiring team" class="w-full h-80 sm:h-[36rem] object-cover">
+                    </div>
                 </div>
-                <h1 class="text-5xl lg:text-6xl font-black text-dark leading-tight">
-                    Electrical Wiring 
-                    <span class="block text-highlight">Services</span>
-                </h1>
-                <p class="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                    Reliable Power, Perfect Safety. Our Electrical Wiring Services ensure your building's wiring is safe and efficient, whether you're building new or renovating.
-                </p>
+
+                <!-- Right: Copy & CTAs -->
+                <div class="order-1 lg:order-2 space-y-6 transform -translate-x-8 opacity-0 transition-all duration-700" data-animate="hero-right">
+                    <div class="inline-flex items-center space-x-3 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight w-max">
+                        <i class="fas fa-plug"></i>
+                        <span>ELECTRICAL WIRING</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
+                        Safe & Efficient Electrical Wiring
+                        <span class="block text-highlight">For homes, offices & industry</span>
+                    </h2>
+
+                    <p class="text-lg text-secondary max-w-xl">
+                        Our certified electricians design and install robust wiring systems to meet modern power requirements, ensuring safety, compliance and reliability for new builds and renovations.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
+                        <a href="contact.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get a Free Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact-form" class="inline-flex items-center space-x-3 border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition">
+                            <span>Request Site Visit</span>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
+
+        <script>
+            (function(){
+                const els = document.querySelectorAll('[data-animate]');
+                if(!els.length) return;
+                const obs = new IntersectionObserver((entries, o) => {
+                    entries.forEach(e => {
+                        if(e.isIntersecting){
+                            e.target.querySelector('.transform')?.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.querySelector('.transform')?.classList.add('translate-x-0','opacity-100');
+                            e.target.classList.remove('translate-x-8','-translate-x-8','opacity-0');
+                            e.target.classList.add('translate-x-0','opacity-100');
+                            o.unobserve(e.target);
+                        }
+                    });
+                }, {threshold: 0.18});
+                els.forEach(el => obs.observe(el));
+            })();
+        </script>
     </section>
 
     <!-- Main Content -->
@@ -245,78 +292,106 @@
         </div>
     </section>
 
-    <!-- Service Categories -->
-    <section class="py-20 bg-pale-steel-light">
+    <!-- Service Categories (pricing-style cards) -->
+    <section class="py-20" style="background-color:#e4bd5a;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-dark mb-6">
-                    Our Electrical Wiring Services
-                </h2>
-                <p class="text-xl text-secondary max-w-3xl mx-auto">
-                    Comprehensive electrical wiring solutions for all types of construction and renovation projects.
-                </p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Our Electrical Wiring Services</h2>
+                <p class="text-lg text-dark/80 max-w-3xl mx-auto mb-6">Professional wiring solutions for new construction, renovations, and commercial facilities — focused on safety and compliance.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- New Construction -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-building text-green-600 text-2xl"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <!-- Card 1: New Construction -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm mb-4">New Builds</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">New Construction</h3>
+                        <p class="text-dark/70 mb-6">End-to-end wiring for new properties with code-compliant design and professional installation.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">New Construction</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Complete electrical wiring for new buildings, ensuring proper planning and installation from the ground up.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Turnkey</div>
+                                <div class="text-sm font-semibold text-dark">Design + Install</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Renovation Projects -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-wrench text-blue-600 text-2xl"></i>
+                <!-- Card 2: Renovation -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-green-700 px-4 py-2 rounded-full text-sm mb-4">Upgrade</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">Renovation Wiring</h3>
+                        <p class="text-dark/70 mb-6">Safe upgrades and rewiring to bring older installations up to modern standards.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Renovation Wiring</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Upgrade and modernize existing electrical systems to meet current safety standards and power requirements.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Safe</div>
+                                <div class="text-sm font-semibold text-dark">Code-Approved</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Commercial Wiring -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-yellow-600 text-2xl"></i>
+                <!-- Card 3: Commercial -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-black/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-gray-100 text-green-700 px-4 py-2 rounded-full text-sm mb-4">Industrial</div>
+                        <h3 class="text-2xl font-bold text-dark mb-3">Commercial Wiring</h3>
+                        <p class="text-dark/70 mb-6">High-capacity wiring solutions for offices, warehouses, and industrial facilities.</p>
                     </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4 text-center">Commercial Wiring</h3>
-                    <p class="text-secondary text-center leading-relaxed">
-                        Heavy-duty electrical wiring for commercial and industrial facilities with high power demands.
-                    </p>
+                    <div>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#9b6d00" stroke-width="1.5"/></svg>
+                            <div>
+                                <div class="text-3xl font-extrabold text-yellow-700">Heavy</div>
+                                <div class="text-sm font-semibold text-dark">High Load</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-accent">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="space-y-8">
-                <h2 class="text-4xl font-black text-white">
-                    Need Professional Electrical Wiring?
-                </h2>
-                <p class="text-xl text-white/90 leading-relaxed">
-                    Trust our certified electricians for safe, reliable, and code-compliant electrical wiring installations. Contact us today for your electrical project needs.
+      <!-- CTA / Ready to Go Solar Hero -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center">
+                <!-- Left: Text -->
+                <div class="p-10 sm:p-16">
+                    <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4"> Need Professional Electrical Wiring?</h2>
+                    <p class="text-lg text-secondary mb-6"> Trust our certified electricians for safe, reliable, and code-compliant electrical wiring installations. Contact us today for your electrical project needs.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="contact.html" class="bg-white text-accent px-10 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-3">
-                        <span>Get Free Consultation</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="tel:+91XXXXXXXXX" class="border-2 border-white text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-accent transition-all duration-300 inline-flex items-center justify-center space-x-3">
-                        <i class="fas fa-phone"></i>
-                        <span>Call Us Now</span>
-                    </a>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="inline-flex items-center justify-center bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>Get Free Consultation</span>
+                            <i class="fas fa-arrow-right ml-3"></i>
+                        </a>
+
+                        <a href="tel:+91XXXXXXXXX" class="inline-flex items-center justify-center border-2 border-highlight text-highlight px-6 py-3 rounded-full font-semibold hover:bg-highlight hover:text-white transition">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>Call Us Now</span>
+                        </a>
+                    </div>
+
+                    <p class="text-sm text-secondary mt-6">No obligation. Free site assessment, system sizing, and transparent pricing — we'll guide you through the incentives and financing options available.</p>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="p-6 sm:p-10 bg-[#fff6d6] flex items-center justify-center">
+                    <img src="hero-about.png" alt="Ready to Go Solar" class="w-full max-w-md h-72 sm:h-96 object-contain">
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-20">

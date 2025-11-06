@@ -9,6 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Sample site-wide stylesheet (design system tokens + components) -->
+    <link rel="stylesheet" href="styles.css">
     <meta name="description" content="AmpLuxe Energy Solutions — Professional solar and electrical services in Chennai. Custom solar installations, wiring, maintenance and energy consultancy.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -647,14 +649,14 @@
     <!-- CTA Section: New two-column layout with callback card -->
     <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left: Copy + CTAs -->
                 <div class="text-left">
                     <div class="inline-flex items-center gap-3 bg-highlight/20 px-3 py-1 rounded-full text-sm font-semibold text-highlight mb-4">
                         <span>GET STARTED</span>
                     </div>
 
-                    <h2 class="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-dark leading-tight">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
                         Ready to start your
                         <span class="block text-accent">Energy Journey?</span>
                     </h2>
@@ -676,7 +678,7 @@
                     </div>
 
                     <!-- trust badges -->
-                    <div class="mt-8 flex items-center gap-6">
+                    <div class="mt-8 flex flex-wrap items-center gap-6">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-gray-200">
                                 <i class="fas fa-award text-accent"></i>
@@ -710,8 +712,8 @@
                 </div>
 
                 <!-- Right: Callback card -->
-                <div>
-                    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 max-w-md mx-auto">
+                <div class="mt-8 lg:mt-0">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 w-full sm:max-w-md mx-auto lg:mx-0">
                         <div class="flex items-start justify-between">
                             <div>
                                 <h3 class="text-xl font-bold text-dark">Request a Free Callback</h3>
