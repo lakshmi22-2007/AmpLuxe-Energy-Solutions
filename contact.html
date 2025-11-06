@@ -579,6 +579,21 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
+            // Mobile services dropdown functionality
+            const mobileServicesBtn = document.getElementById('mobile-services-btn');
+            const mobileServicesMenu = document.getElementById('mobile-services-menu');
+            const mobileServicesIcon = document.getElementById('mobile-services-icon');
+            
+            if (mobileServicesBtn && mobileServicesMenu) {
+                mobileServicesBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mobileServicesMenu.classList.toggle('hidden');
+                    if (mobileServicesIcon) {
+                        mobileServicesIcon.classList.toggle('rotate-180');
+                    }
+                });
+            }
+            
             // Close dropdowns when clicking outside
             document.addEventListener('click', function(e) {
                 if (!servicesDropdownBtn.contains(e.target) && !servicesDropdownMenu.contains(e.target)) {
