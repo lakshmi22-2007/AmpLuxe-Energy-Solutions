@@ -21,7 +21,9 @@
                         'accent': '#475569',
                         'dark': '#1e293b',
                         'light': '#f8fafc',
-                        'highlight': '#e4bd5a'
+                        'highlight': '#e4bd5a',
+                        'fon': '#258c77',
+                        'son' :'#ebfa9e'
                     },
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
@@ -30,15 +32,24 @@
             }
         }
     </script>
+    <style>
+        /* Fix for footer white gap: ensure html/body full height and matching background */
+        *, *::before, *::after { box-sizing: border-box; }
+    html { height: 100%; min-height: 100%; background-color: #355a55; overflow-x: hidden; }
+    /* Keep page-level background matching footer to avoid white strip below */
+    body { height: 100%; min-height: 100%; margin: 0; background-color: #355a55; }
+        main { flex: 1 1 auto; }
+        footer { margin-top: auto; }
+    </style>
 </head>
-<body class="font-inter bg-light text-dark overflow-x-hidden">
+<body class="min-h-screen flex flex-col font-inter bg-light text-dark overflow-x-hidden">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white border-b border-pale-steel/30 z-50" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
+                    <img src="AMPLUXE ENERGY.png" alt="AmpLuxe Energy Solutions" class="h-12 w-auto">
                     <div>
                         <span class="text-xl font-bold text-dark">AmpLuxe</span>
                         <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
@@ -104,7 +115,7 @@
                 
                 <!-- CTA Button -->
                 <div class="hidden lg:block">
-                    <a href="contact.html" class="bg-highlight text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
+                    <a href="contact.html" class="bg-fon text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
                         <span>Get A Quote</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -141,97 +152,84 @@
                 </div>
                 
                 <a href="contact.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">CONTACT</a>
-                <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
+                <a href="contact.html" class="block mx-4 mt-6 bg-fon text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
             </div>
         </div>
     </nav>
 
-    <!-- About Us Hero Section -->
-    <section class="min-h-screen bg-gradient-to-br from-pale-steel-light via-white to-pale-steel-light pt-32 pb-20 relative overflow-hidden">
+    <main class="flex-1">
+
+    <!-- About Us Hero Section (redesigned) -->
+    <section class="min-h-[60vh] bg-light pt-20 pb-12 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Hero Content -->
-            <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-200px)]">
-                <!-- Content Column -->
-                <div class="space-y-8 order-2 lg:order-1">
-                    <div class="space-y-4">
-                        <div class="inline-flex items-center space-x-2 bg-highlight/20 px-6 py-2 rounded-full mb-4">
-                            <i class="fas fa-lightbulb text-highlight"></i>
-                            <span class="text-highlight font-semibold text-sm">Powering Energy Solutions</span>
-                        </div>
-                        <h1 class="text-6xl lg:text-7xl font-black text-dark leading-tight">About AmpLuxe</h1>
-                    </div>
-
-                    <p class="text-2xl text-secondary font-semibold">AmpLuxe Energy Solutions LLP</p>
-
-                    <p class="text-lg text-secondary leading-relaxed">
-                        We provide comprehensive and reliable solar and electrical services to power a sustainable future for commercial and residential clients. Based in Mount Road, Chennai, we specialise in end-to-end energy solutions ensuring safe, compliant and optimised installations.
-                    </p>
-                    <p class="text-lg text-secondary leading-relaxed">
-                        With over 20 years of expertise in this field, we aim to provide the best service we have to offer. Our commitment to excellence, safety, and customer satisfaction drives everything we do.
-                    </p>
-
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="contact.html" class="bg-highlight text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
-                            <span>Get Started</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="contact.html" class="border-2 border-highlight text-highlight px-8 py-4 rounded-xl font-semibold hover:bg-highlight/10 transition-all duration-300 flex items-center justify-center space-x-2">
-                            <span>Learn More</span>
-                            <i class="fas fa-phone"></i>
-                        </a>
-                    </div>
-
-                    <!-- Key Stats -->
-                    <div id="hero-stats" class="grid grid-cols-3 gap-6 pt-8">
-                        <div class="space-y-2 text-center">
-                            <div class="text-4xl font-black text-highlight counter" data-target="20" data-suffix="+" aria-live="polite">0</div>
-                            <p class="text-secondary font-semibold text-sm">Years Experience</p>
-                        </div>
-                        <div class="space-y-2 text-center">
-                            <div class="text-4xl font-black text-highlight counter" data-target="500" data-suffix="+" aria-live="polite">0</div>
-                            <p class="text-secondary font-semibold text-sm">Happy Customers</p>
-                        </div>
-                        <div class="space-y-2 text-center">
-                            <div class="text-4xl font-black text-highlight counter" data-target="100" data-suffix="%" aria-live="polite">0</div>
-                            <p class="text-secondary font-semibold text-sm">Satisfaction</p>
-                        </div>
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <!-- Left: Image -->
+                <div class="order-1 lg:order-1">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-pale-steel/30">
+                        <img src="s1.avif" alt="AmpLuxe Energy Solutions Team" class="w-full h-[380px] md:h-[520px] object-cover">
                     </div>
                 </div>
 
-                <!-- Image Column -->
-                <div class="relative order-1 lg:order-2 -mt-12">
-                    <div class="bg-white rounded-3xl p-4 shadow-2xl border border-pale-steel/30">
-                        <img src="hero-about.png" alt="AmpLuxe Energy Solutions Team" class="w-full h-auto object-cover rounded-2xl">
+                <!-- Right: Content -->
+                <div class="order-2 lg:order-2 space-y-6">
+                    <div class="inline-flex items-center space-x-3 bg-[#ebfa9e]/40 px-3 py-1 rounded-full w-max">
+                        <span class="text-dark font-semibold text-sm">Powering Energy Solutions</span>
                     </div>
 
-                    <!-- Floating Expert Support Card -->
-                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">About AmpLuxe</h1>
 
-                   
+                    <p class="text-base text-secondary max-w-xl">
+                        AmpLuxe Energy Solutions LLP provides reliable solar and electrical services across residential and commercial properties. Based in Mount Road, Chennai, we focus on safe, compliant installations and long-term performance.
+                    </p>
+
+                    <p class="text-sm text-secondary max-w-xl">
+                        With over two decades of practical experience, our team delivers tailored energy solutions that prioritise safety, efficiency and customer satisfaction.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mt-3">
+                        <a href="contact.html" class="inline-flex items-center gap-3 bg-[#258c77] hover:bg-[#1f6d60] text-white px-5 py-3 rounded-full font-semibold">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Get Started</span>
+                        </a>
+                        <a href="#core-services" class="inline-flex items-center gap-3 border-2 border-[#258c77] text-dark px-5 py-3 rounded-full font-semibold hover:bg-[#1f6d60]/80">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Our Services</span>
+                        </a>
+                    </div>
+
+                    <!-- Compact Stats -->
+                    <div class="mt-6 grid grid-cols-3 gap-4 max-w-sm">
+                        <div class="text-center">
+                            <div class="text-2xl font-extrabold text-[#258c77]">20+</div>
+                            <div class="text-xs text-secondary">Years</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-extrabold text-[#258c77]">500+</div>
+                            <div class="text-xs text-secondary">Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-extrabold text-[#258c77]">100%</div>
+                            <div class="text-xs text-secondary">Satisfaction</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
-            <i class="fas fa-chevron-down text-secondary text-xl animate-bounce"></i>
         </div>
     </section>
 
             <!-- Core Services Section -->
-            <div class="mb-20">
+            <div class="mb-12">
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-6">
+                    <div class="inline-flex items-center space-x-2 bg-fon/20 px-4 py-2 rounded-full text-sm font-semibold text-fon mb-6">
                         <span>OUR SERVICES</span>
                     </div>
                     <h2 class="text-5xl font-black text-dark">Core Services</h2>
-                    <p class="text-xl text-secondary max-w-3xl mx-auto mt-6">
+                    <p class="text-sm text-secondary max-w-3xl mx-auto mt-6">
                         Comprehensive electrical and solar solutions designed to meet all your energy needs with safety, efficiency, and reliability.
                     </p>
                 </div>
                 
-                <div id="core-services" class="flex flex-wrap justify-center gap-8 core-services">
+                    <div id="core-services" class="flex flex-wrap justify-center gap-8 core-services">
                     <!-- Step 1 -->
                     <div class="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] service-step bg-white rounded-3xl p-8 text-center shadow-lg transition-shadow duration-300 border border-pale-steel/30 hover:scale-105 hover:shadow-2xl transform-gpu" data-step="0">
                         <div class="h-1 bg-pale-steel-light rounded-full overflow-hidden mb-6">
@@ -242,14 +240,14 @@
                                 <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
                                 <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
                             </svg>
-                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-fon rounded-full relative">
                                 <i class="fas fa-solar-panel text-2xl"></i>
                                 
                             </div>
                         </div>
                         <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
-                            <h3 class="text-2xl font-bold text-dark mb-4">Solar Panel Systems Installation</h3>
-                            <p class="text-secondary mb-8 leading-relaxed">
+                            <h3 class="text-secondary font-bold text-dark mb-4">Solar Panel Systems Installation</h3>
+                            <p class="text-sm mb-8 leading-relaxed">
                                 Our end-to-end Solar Panel System Installation service offers energy freedom. We design, install, and secure permits for custom systems that suit your energy needs and roof layout.
                             </p>
                         </div>
@@ -265,14 +263,14 @@
                                 <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
                                 <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
                             </svg>
-                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-fon rounded-full relative">
                                 <i class="fas fa-bolt text-2xl"></i>
                                 
                             </div>
                         </div>
                         <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
-                            <h3 class="text-2xl font-bold text-dark mb-4">Electrical Wiring Services</h3>
-                            <p class="text-secondary mb-8 leading-relaxed">
+                            <h3 class="text-secondary font-bold text-dark mb-4">Electrical Wiring Services</h3>
+                            <p class="text-sm mb-8 leading-relaxed">
                                 Reliable Power, Perfect Safety. Our Electrical Wiring Services ensure your building's wiring is safe and efficient, whether you're building new or renovating.
                             </p>
                         </div>
@@ -288,14 +286,14 @@
                                 <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
                                 <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
                             </svg>
-                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-fon rounded-full relative">
                                 <i class="fas fa-tachometer-alt text-2xl"></i>
                                 
                             </div>
                         </div>
                         <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
-                            <h3 class="text-2xl font-bold text-dark mb-4">Meter Box Installation & Upgrades</h3>
-                            <p class="text-secondary mb-8 leading-relaxed">
+                            <h3 class="text-secondary font-bold text-dark mb-4">Meter Box Installation & Upgrades</h3>
+                            <p class="text-sm mb-8 leading-relaxed">
                                 Expert meter box installation and upgrades to safely manage your property's power intake and support modern energy demands.
                             </p>
                         </div>
@@ -311,14 +309,14 @@
                                 <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
                                 <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
                             </svg>
-                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-fon rounded-full relative">
                                 <i class="fas fa-plug text-2xl"></i>
                                 
                             </div>
                         </div>
                         <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
-                            <h3 class="text-2xl font-bold text-dark mb-4">New Electrical Connection Support</h3>
-                            <p class="text-secondary mb-8 leading-relaxed">
+                            <h3 class="text-secondary font-bold text-dark mb-4">New Electrical Connection Support</h3>
+                            <p class="text-sm mb-8 leading-relaxed">
                                 We simplify the process of getting your power connected — from paperwork to final installation and safety checks.
                             </p>
                         </div>
@@ -334,14 +332,14 @@
                                 <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(71,85,105,0.12)" stroke-width="8"></circle>
                                 <circle class="progress-circle" cx="40" cy="40" r="34" fill="none" stroke="#475569" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.628" stroke-dashoffset="213.628"></circle>
                             </svg>
-                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-highlight rounded-full relative">
+                            <div class="icon-inner z-10 w-10 h-10 flex items-center justify-center text-fon rounded-full relative">
                                 <i class="fas fa-tools text-2xl"></i>
                                 
                             </div>
                         </div>
                         <div class="step-content opacity-0 translate-y-3 transition-all duration-500">
-                            <h3 class="text-2xl font-bold text-dark mb-4">Maintenance Works</h3>
-                            <p class="text-secondary mb-8 leading-relaxed">
+                            <h3 class="text-secondary font-bold text-dark mb-4">Maintenance Works</h3>
+                            <p class="text-sm mb-8 leading-relaxed">
                                 Routine inspections, preventative care, and rapid repairs to keep your systems safe and performing at their best.
                             </p>
                         </div>
@@ -356,45 +354,45 @@
     <!-- FAQs -->
     <section class="py-12 bg-light">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-black text-center mb-6">FAQs</h2>
+            <h2 class="text-2xl sm:text-4xl font-black text-center mb-6">FAQs</h2>
 
             <div class="space-y-3">
                 <details class="rounded-2xl bg-gray-100 p-4" open>
-                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                    <summary class="flex items-center justify-between cursor-pointer text-secondary font-medium">
                         <span>How do I access AI Co-Founder and Co-Founder Actions?</span>
                         <span class="text-xl font-bold faq-icon">+</span>
                     </summary>
-                    <div class="mt-3 text-secondary">
-                        Access is available via your account dashboard — navigate to the "Co-Founder" section and enable Actions from the settings. Contact support if you need assistance.
+                    <div class="mt-3 text-sm">
+                        Access is available via your account dashboard navigate to the "Co-Founder" section and enable Actions from the settings. Contact support if you need assistance.
                     </div>
                 </details>
 
                 <details class="rounded-2xl bg-gray-100 p-4">
-                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                    <summary class="flex items-center justify-between cursor-pointer text-secondary font-medium">
                         <span>What kind of questions can I ask AI Co-Founder?</span>
                         <span class="text-xl font-bold faq-icon">+</span>
                     </summary>
-                    <div class="mt-3 text-secondary">
+                    <div class="mt-3 text-sm">
                         You can ask strategic, operational, and technical questions related to your project — from planning and prioritisation to example code and marketing ideas.
                     </div>
                 </details>
 
                 <details class="rounded-2xl bg-gray-100 p-4">
-                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                    <summary class="flex items-center justify-between cursor-pointer text-secondary font-medium">
                         <span>What can Co-Founder Actions do?</span>
                         <span class="text-xl font-bold faq-icon">+</span>
                     </summary>
-                    <div class="mt-3 text-secondary">
+                    <div class="mt-3 text-sm">
                         Actions can generate content, create tasks, suggest code changes, and help automate common workflows. Capabilities depend on your subscription level.
                     </div>
                 </details>
 
                 <details class="rounded-2xl bg-gray-100 p-4">
-                    <summary class="flex items-center justify-between cursor-pointer text-lg font-medium">
+                    <summary class="flex items-center justify-between cursor-pointer text-secondary font-medium">
                         <span>Does AI Co-Founder provide legal or tax advice?</span>
                         <span class="text-xl font-bold faq-icon">+</span>
                     </summary>
-                    <div class="mt-3 text-secondary">
+                    <div class="mt-3 text-sm">
                         No — AI Co-Founder provides general guidance and templates but does not replace professional legal, tax, or financial advice. Consult a qualified professional for those matters.
                     </div>
                 </details>
@@ -424,16 +422,16 @@
             <div class="rounded-3xl bg-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center">
                 <!-- Left: Text -->
                 <div class="p-10 sm:p-16">
-                    <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Need a New Electrical Connection?</h2>
-                    <p class="text-lg text-secondary mb-6">We handle everything from the application to the final commissioning — fast, compliant, and stress-free. Contact us for a free consultation.</p>
+                    <h2 class="text-3xl sm:text-5xl font-black text-dark mb-4">Need a New Electrical Connection?</h2>
+                    <p class="text-1xl text-secondary mb-6">We handle everything from the application to the final commissioning — fast, compliant, and stress-free. Contact us for a free consultation.</p>
 
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="contact.html" class="inline-flex items-center justify-center bg-highlight text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+                        <a href="contact.html" class="inline-flex items-center justify-center bg-fon text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
                             <span>Get Free Consultation</span>
                             <i class="fas fa-arrow-right ml-3"></i>
                         </a>
 
-                        <a href="tel:+91XXXXXXXXX" class="inline-flex items-center justify-center border-2 border-highlight text-highlight px-6 py-3 rounded-full font-semibold hover:bg-highlight hover:text-white transition">
+                        <a href="tel:+91XXXXXXXXX" class="inline-flex items-center justify-center border-2 border-fon text-fon px-6 py-3 rounded-full font-semibold hover:bg-fon hover:text-white transition">
                             <i class="fas fa-phone mr-2"></i>
                             <span>Call Us Now</span>
                         </a>
@@ -443,7 +441,7 @@
                 </div>
 
                 <!-- Right: Image -->
-                <div class="p-6 sm:p-10 bg-[#fff6d6] flex items-center justify-center">
+                <div class="p-6 sm:p-10 bg-[#fff] flex items-center justify-center">
                     <img src="hero-about.png" alt="Electrical connection" class="w-full max-w-md h-72 sm:h-96 object-contain">
                 </div>
             </div>
@@ -451,7 +449,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-20">
+    <footer class="bg-[#355a55] text-white py-20 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-12">
                 <!-- Company Info -->
@@ -459,11 +457,11 @@
                     <div class="flex items-center space-x-2">
                         <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
                         <div>
-                            <span class="text-xl font-bold">AmpLuxe</span>
-                            <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                            <span class="text-xl font-bold text-white">AmpLuxe</span>
+                            <p class="text-xs text-white-200 -mt-1">Energy Solutions</p>
                         </div>
                     </div>
-                    <p class="text-secondary leading-relaxed">
+                    <p class="text-white-300 leading-relaxed">
                         Providing comprehensive solar and electrical services for a sustainable future.
                     </p>
                     <div class="flex space-x-4">
@@ -483,24 +481,24 @@
                 </div>
                 
                 <!-- Quick Links -->
-                <div class="space-y-6">
-                    <h4 class="text-xl font-bold">Quick Links</h4>
+                    <div class="space-y-6">
+                    <h4 class="text-xl font-bold text-white">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="about.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>About Us</span></a></li>
-                        <li><a href="#" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Services</span></a></li>
-                        <li><a href="contact.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Contact</span></a></li>
-                        <li><a href="#" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Projects</span></a></li>
+                        <li><a href="about.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>About Us</span></a></li>
+                        <li><a href="#" class="text-white hover:text-white-300 flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Services</span></a></li>
+                        <li><a href="contact.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Contact</span></a></li>
+                        <li><a href="#" class="text-white hover:text-white-300 flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Projects</span></a></li>
                     </ul>
                 </div>
                 
                 <!-- Services -->
                 <div class="space-y-6">
-                    <h4 class="text-xl font-bold">Our Services</h4>
+                    <h4 class="text-xl font-bold text-white">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="service-solar-panel.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Solar Installation</span></a></li>
-                        <li><a href="service-electrical-wiring.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Electrical Wiring</span></a></li>
-                        <li><a href="service-maintenance.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Maintenance</span></a></li>
-                        <li><a href="service-meter-box.html" class="text-secondary hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Meter Box Upgrades</span></a></li>
+                        <li><a href="service-solar-panel.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Solar Installation</span></a></li>
+                        <li><a href="service-electrical-wiring.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Electrical Wiring</span></a></li>
+                        <li><a href="service-maintenance.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Maintenance</span></a></li>
+                        <li><a href="service-meter-box.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Meter Box Upgrades</span></a></li>
                     </ul>
                 </div>
                 
@@ -509,28 +507,33 @@
                     <h4 class="text-xl font-bold">Contact Info</h4>
                     <div class="space-y-4">
                         <div class="flex items-start space-x-3">
-                            <i class="fas fa-map-marker-alt text-highlight mt-1"></i>
-                            <p class="text-secondary">Mount Road, Chennai, Tamil Nadu, India</p>
+                            <i class="fas fa-map-marker-alt text-fon mt-1"></i>
+                            <p class="text-white-300">Mount Road, Chennai, Tamil Nadu, India</p>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-envelope text-highlight"></i>
-                            <p class="text-secondary">info@ampluxeenergy.com</p>
+                            <i class="fas fa-envelope text-fon"></i>
+                            <p class="text-white-300">info@ampluxeenergy.com</p>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-phone text-highlight"></i>
-                            <p class="text-secondary">+91 XXX XXX XXXX</p>
+                            <i class="fas fa-phone text-fon"></i>
+                            <p class="text-white-300">+91 XXX XXX XXXX</p>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-clock text-highlight"></i>
-                            <p class="text-secondary">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                            <i class="fas fa-clock text-fon"></i>
+                            <p class="text-white-300">Mon - Sat: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-secondary/30 mt-16 pt-8 text-center">
-                <p class="text-secondary">&copy; 2025 AmpLuxe Energy Solutions LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
+                    <div class="border-t border-secondary/30 mt-16 pt-8 text-center">
+                    <p class="text-white text-xs">&copy; 2025 AmpLuxe Energy Solutions LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
             </div>
+        </footer>
+
+        </main>
         </div>
     </footer>
 

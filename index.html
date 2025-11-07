@@ -235,74 +235,64 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-24 bg-gradient-to-br from-gray-100 to-gray-200">
+    <!-- Services Section (redesigned) -->
+    <section class="py-20 bg-white" aria-labelledby="services-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header -->
-            <div class="text-center space-y-6 mb-20">
-                <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
-                    <span>OUR SERVICES</span>
-                </div>
-                <h2 class="text-5xl font-black text-gray-800">Core Services We Offer</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive electrical and solar solutions designed to meet all your energy needs with safety, efficiency, and reliability.
-                </p>
-            </div>
-            
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- Solar Panel Installation -->
-                <div class="group bg-white rounded-3xl p-8 text-center shadow-lg transition-transform duration-300 border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-colors duration-300">
-                    <div class="w-20 h-20 bg-gray-200 rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-300 group-hover:bg-accent">
-                        <i class="fas fa-solar-panel text-gray-600 text-2xl transition-colors duration-300 group-hover:text-white"></i>
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10">
+                <div class="w-full lg:max-w-2xl">
+                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-4">
+                        <span>OUR SERVICES</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 transition-colors duration-300 group-hover:text-accent">Solar Panel Installation</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed transition-colors duration-300 group-hover:text-accent">
-                        End-to-end solar solutions offering energy freedom with custom system design and professional installation.
-                    </p>
-                    <a href="service-solar-installation.html" class="inline-flex items-center space-x-2 text-gray-700 font-semibold transition-colors duration-300 group-hover:text-accent">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right text-sm"></i>
-                    </a>
+                    <h2 id="services-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">Core Services We Offer</h2>
+                    <p class="mt-3 text-lg text-secondary max-w-2xl">Smart, safe and reliable electrical & solar services tailored for homes and businesses — designed to save you money and reduce your carbon footprint.</p>
                 </div>
-                
-                <!-- Electrical Wiring -->
-                <div class="group bg-white rounded-3xl p-8 text-center shadow-lg transition-transform duration-300 border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-colors duration-300">
-                    <div class="w-20 h-20 bg-gray-200 rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-300 group-hover:bg-accent">
-                        <i class="fas fa-plug text-gray-600 text-2xl transition-colors duration-300 group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 transition-colors duration-300 group-hover:text-accent">Electrical Wiring</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed transition-colors duration-300 group-hover:text-accent">
-                        Safe and efficient electrical wiring for new construction and renovations using high-grade materials.
-                    </p>
-                    <a href="service-electrical-wiring.html" class="inline-flex items-center space-x-2 text-gray-700 font-semibold transition-colors duration-300 group-hover:text-accent">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right text-sm"></i>
-                    </a>
-                </div>
-                
-                <!-- Maintenance Works -->
-                <div class="group bg-white rounded-3xl p-8 text-center shadow-lg transition-transform duration-300 border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-colors duration-300">
-                    <div class="w-20 h-20 bg-gray-200 rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-300 group-hover:bg-accent">
-                        <i class="fas fa-tools text-gray-600 text-2xl transition-colors duration-300 group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 transition-colors duration-300 group-hover:text-accent">Maintenance Works</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed transition-colors duration-300 group-hover:text-accent">
-                        Comprehensive maintenance services including inspections, preventative care, and performance optimization.
-                    </p>
-                    <a href="service-maintenance.html" class="inline-flex items-center space-x-2 text-gray-700 font-semibold transition-colors duration-300 group-hover:text-accent">
-                        <span>Learn More</span>
+
+                <div class="w-full lg:w-auto">
+                    <a href="service.html" class="inline-flex items-center gap-3 bg-highlight text-dark px-5 py-3 rounded-full font-semibold shadow hover:shadow-lg transition-all duration-200">
+                        <span>View All Services</span>
                         <i class="fas fa-arrow-right text-sm"></i>
                     </a>
                 </div>
             </div>
-            
-            <!-- View All Services Button -->
-            <div class="text-center">
-                <a href="service.html" class="inline-flex items-center space-x-3 bg-highlight text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300">
-                    <span>View All Services</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+        </div>
+
+        <!-- Brand strip with service cards -->
+        <div class="bg-highlight py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-8 md:grid-cols-3">
+                    <!-- Card 1 -->
+                    <article class="bg-white rounded-2xl p-6 shadow-xl border border-transparent hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Solar Panel Installation</h3>
+                            <p class="text-sm text-secondary mt-3">Custom system design, permitting and professional installation for long-lasting performance.</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="service-solar-installation.html" class="text-accent font-semibold">Learn more</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="bg-white rounded-2xl p-6 shadow-xl border border-transparent hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Electrical Wiring & Upgrades</h3>
+                            <p class="text-sm text-secondary mt-3">Safe wiring for new builds, renovations and panel upgrades to keep your property code-compliant.</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="service-electrical-wiring.html" class="text-accent font-semibold">Learn more</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="bg-white rounded-2xl p-6 shadow-xl border border-transparent hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Maintenance & Support</h3>
+                            <p class="text-sm text-secondary mt-3">Preventative maintenance, troubleshooting and priority support to keep systems running at peak efficiency.</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="service-maintenance.html" class="text-accent font-semibold">Learn more</a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>

@@ -21,7 +21,9 @@
                         'accent': '#475569',
                         'dark': '#1e293b',
                         'light': '#f8fafc',
-                        'highlight': '#e4bd5a'
+                        'highlight': '#e4bd5a',
+                        'fon': '#258c77',
+                        'son' :'#ebfa9e'
                     },
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
@@ -30,8 +32,20 @@
             }
         }
     </script>
+    <style>
+        /* Ensure the html/body share the same full-height background and prevent an extra white strip */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { height: 100%; min-height: 100%; background-color: #355a55; }
+        body { height: 100%; min-height: 100%; margin: 0; background-color: #f8fafc; }
+        /* In case Tailwind classes are altered elsewhere, make main grow and footer stick */
+        main { flex: 1 1 auto; }
+        footer { margin-top: auto; }
+        /* Ensure no extra space below footer */
+        html { overflow-x: hidden; }
+        body { position: relative; }
+    </style>
 </head>
-<body class="font-inter bg-light text-dark overflow-x-hidden">
+<body class="min-h-screen flex flex-col font-inter bg-light text-dark overflow-x-hidden">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white border-b border-pale-steel/30 z-50" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +119,7 @@
                 
                 <!-- CTA Button -->
                 <div class="hidden lg:block">
-                    <a href="contact.html" class="bg-highlight text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
+                    <a href="contact.html" class="bg-fon text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl flex items-center space-x-2">
                         <span>Get A Quote</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -141,122 +155,79 @@
                     </div>
                 </div>
                 <a href="contact.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">CONTACT</a>
-                <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
+                <a href="contact.html" class="block mx-4 mt-6 bg-fon text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="min-h-screen bg-gradient-to-br from-pale-steel-light via-white to-pale-steel-light relative overflow-hidden">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <div class="absolute top-20 left-10 w-72 h-72 bg-highlight rounded-full blur-3xl"></div>
-                <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-            </div>
-            
-            <div class="relative pt-12 pb-16">
+    <main class="pt-16 flex-1">
+        <!-- Hero Section (tightened spacing) -->
+        <section class="min-h-[60vh] bg-light relative overflow-hidden">
+            <div class="relative pt-8 pb-10">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
-                        <!-- Hero Content -->
-                        <div class="space-y-8 order-2 lg:order-1">
-                            <div class="inline-flex items-center space-x-2 bg-highlight/20 px-6 py-3 rounded-full text-sm font-semibold text-highlight border border-highlight/30">
-                                <i class="fas fa-phone text-highlight"></i>
-                                <span>Ready to Help 24/7</span>
+                    <div class="grid lg:grid-cols-2 gap-8 items-center min-h-[60vh]">
+                        <!-- Left: Text content -->
+                        <div class="order-2 lg:order-1 space-y-6">
+                            <div class="inline-flex items-center space-x-3 bg-[#ebfa9e]/40 px-3 py-1 rounded-full w-max">
+                                <span class="text-[#0b0b0b] font-semibold text-sm">Get in touch</span>
                             </div>
-                            
-                            <div class="space-y-6">
-                                <h1 class="text-6xl lg:text-7xl font-black text-dark leading-tight">
-                                    Let's Connect
-                                    <span class="block text-highlight">& Power Up</span>
-                                    <span class="block text-accent">Your Future</span>
-                                </h1>
-                                
-                                <p class="text-xl text-secondary leading-relaxed max-w-2xl">
-                                    Ready to transform your energy future? Get in touch with our expert team for personalized electrical and solar solutions that power sustainable living across India.
-                                </p>
-                            </div>
-                            
-                            <!-- Quick Contact Options -->
-                            <div class="flex flex-col sm:flex-row gap-4 pt-6">
-                                <a href="tel:+91XXXXXXXXXX" class="bg-highlight text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 group">
+
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-tight">
+                                Let's Connect
+                                <span class="block text-dark">Power Up</span>
+                                <span class="block text-accent">Your Future</span>
+                            </h1>
+
+                            <p class="text-sm md:text-base text-secondary max-w-2xl"></p>
+                                Ready to transform your energy future? Get in touch with our expert team for personalised electrical and solar solutions that power sustainable living across India.
+                            </p>
+
+                            <div class="flex flex-wrap gap-3 mt-2">
+                                <a href="tel:+91XXXXXXXXXX" class="inline-flex items-center gap-3 bg-[#258c77] hover:bg-[#1f6d60] text-white px-5 py-3 rounded-full font-semibold transition-shadow">
                                     <i class="fas fa-phone"></i>
                                     <span>Call Now</span>
-                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
                                 </a>
-                                <a href="#contact-form" class="border-2 border-highlight text-highlight px-8 py-4 rounded-full font-bold hover:bg-highlight hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 group">
+
+                                <a href="#contact-form" class="inline-flex items-center gap-3 border-2 border-[#258c77] text-dark px-5 py-3 rounded-full font-semibold hover:bg-[#1f6d60]/80 transition-colors">
                                     <i class="fas fa-envelope"></i>
                                     <span>Send Message</span>
-                                    <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform duration-300"></i>
                                 </a>
                             </div>
-                            
-                            <!-- Quick Stats -->
-                            <div class="grid grid-cols-3 gap-8 pt-12 border-t border-pale-steel/50">
+
+                            <!-- Stats (kept simple for now) -->
+                            <div class="mt-8 grid grid-cols-3 gap-6 pt-8 border-t border-pale-steel/50">
                                 <div class="text-center">
-                                    <div class="flex items-center justify-center mb-3">
-                                        <div class="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center">
-                                            <i class="fas fa-clock text-highlight"></i>
-                                        </div>
-                                    </div>
-                                    <p class="text-3xl font-black text-dark mb-1">24/7</p>
+                                    
+                                    <p class="text-2xl font-black text-dark mb-1">24/7</p>
                                     <p class="text-secondary font-semibold text-sm">Emergency Support</p>
                                 </div>
                                 <div class="text-center">
-                                    <div class="flex items-center justify-center mb-3">
-                                        <div class="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center">
-                                            <i class="fas fa-users text-highlight"></i>
-                                        </div>
-                                    </div>
-                                    <p class="text-3xl font-black text-dark mb-1">500+</p>
+                                    
+                                    <p class="text-2xl font-black text-dark mb-1">500+</p>
                                     <p class="text-secondary font-semibold text-sm">Happy Customers</p>
                                 </div>
                                 <div class="text-center">
-                                    <div class="flex items-center justify-center mb-3">
-                                        <div class="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center">
-                                            <i class="fas fa-award text-highlight"></i>
-                                        </div>
-                                    </div>
-                                    <p class="text-3xl font-black text-dark mb-1">20+</p>
+                                   
+                                    <p class="text-2xl font-black text-dark mb-1">20+</p>
                                     <p class="text-secondary font-semibold text-sm">Years Experience</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Hero Image -->
-                        <div class="relative order-1 lg:order-2 -mt-12">
-                            <div class="relative z-10">
-                                <!-- Main Image Container -->
-                                <div class="bg-white rounded-3xl p-4 shadow-2xl border border-pale-steel/30 ">
-                                    <img src="hero-contact.png" alt="Contact AmpLuxe Energy Solutions" class="w-full h-96 object-cover rounded-2xl">
-                                    
-                                    <!-- Floating Contact Card -->
-                                    
-                                </div>
-                                
-                                
+
+                        <!-- Right: Image (slightly smaller height) -->
+                        <div class="order-1 lg:order-2 -mt-4">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-pale-steel/30">
+                                <img src="image-1762336707025.png" alt="AmpLuxe team at work" class="w-full h-[360px] md:h-[440px] object-cover">
                             </div>
-                            
-                            <!-- Background Decorative Elements -->
-                            
-                           
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <a href="#contact-form" class="flex flex-col items-center text-secondary hover:text-highlight transition-colors duration-300">
-                    <span class="text-sm font-semibold mb-2">Get In Touch</span>
-                    <i class="fas fa-chevron-down text-xl"></i>
-                </a>
-            </div>
         </section>
 
-        <!-- Location Map & Contact Information Section -->
-        <section id="contact-map" class="py-20 bg-white">
+        <!-- Location Map & Contact Information Section (reduced top padding) -->
+        <section id="contact-map" class="py-12 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-16 text-center">
                     <h2 class="text-5xl font-black text-dark mb-6">Find Us On The Map</h2>
@@ -279,10 +250,10 @@
                         </div>
                         
                         <!-- Office Address -->
-                        <div class="bg-pale-steel-light rounded-3xl p-6 border border-pale-steel/30 hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-son rounded-3xl p-6 border border-son/30 hover:shadow-lg transition-shadow duration-300">
                             <div class="flex items-start space-x-3">
-                                <div class="w-10 h-10 bg-highlight/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-map-marker-alt text-highlight text-sm"></i>
+                                <div class="w-10 h-10 bg-fon/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-map-marker-alt text-fon  text-sm"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-sm font-bold text-dark mb-2">Office Address</h4>
@@ -296,10 +267,10 @@
                         </div>
                         
                         <!-- Phone Numbers -->
-                        <div class="bg-pale-steel-light rounded-3xl p-6 border border-pale-steel/30 hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-son rounded-3xl p-6 border border-son/30 hover:shadow-lg transition-shadow duration-300">
                             <div class="flex items-start space-x-3">
-                                <div class="w-10 h-10 bg-highlight/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-phone text-highlight text-sm"></i>
+                                <div class="w-10 h-10 bg-fon/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-phone text-fon text-sm"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-sm font-bold text-dark mb-2">Phone</h4>
@@ -312,10 +283,10 @@
                         </div>
                         
                         <!-- Email Addresses -->
-                        <div class="bg-pale-steel-light rounded-3xl p-6 border border-pale-steel/30 hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-son rounded-3xl p-6 border border-son/30 hover:shadow-lg transition-shadow duration-300">
                             <div class="flex items-start space-x-3">
-                                <div class="w-10 h-10 bg-highlight/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-envelope text-highlight text-sm"></i>
+                                <div class="w-10 h-10 bg-fon/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-envelope text-fon text-sm"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-sm font-bold text-dark mb-2">Email</h4>
@@ -328,16 +299,16 @@
                         </div>
                         
                         <!-- Business Hours -->
-                        <div class="bg-highlight/10 rounded-3xl p-6 border border-highlight/20 hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-son rounded-3xl p-6 border border-son/20 hover:shadow-lg transition-shadow duration-300">
                             <div class="flex items-start space-x-3">
-                                <div class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-clock text-highlight text-sm"></i>
+                                <div class="w-10 h-10 bg-fon/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-clock text-fon text-sm"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-sm font-bold text-dark mb-2">Hours</h4>
                                     <p class="text-secondary text-xs">
                                         <span class="block">Mon-Sat: 9AM - 6PM</span>
-                                        <span class="block text-highlight font-semibold">24/7 Emergency</span>
+                                        <span class="block text-fon font-semibold">24/7 Emergency</span>
                                     </p>
                                 </div>
                             </div>
@@ -353,8 +324,8 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <!-- Left: heading + search -->
                     <div class="pt-6">
-                        <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full mb-4">
-                            <span class="text-highlight font-semibold">Service Coverage</span>
+                        <div class="inline-flex items-center space-x-2 bg-son/30 px-4 py-2 rounded-full mb-4">
+                            <span class="text-dark font-semibold">Service Coverage</span>
                         </div>
 
                         <h2 class="text-4xl sm:text-5xl font-black text-dark mb-4">Areas We Serve</h2>
@@ -394,7 +365,7 @@
 
 
         <!-- Why Choose Us Section (pricing-style cards on yellow background) -->
-    <section class="py-20" style="background-color:#e4bd5a;">
+    <section class="py-20" style="background-color:#ebfa9e;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <div class="inline-flex items-center space-x-2 bg-white/30 px-6 py-2 rounded-full mb-4">
@@ -473,7 +444,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-16">
+    <footer class="bg-[#355a55] text-white py-16 mt-auto text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-4 gap-8 mb-12">
                 <!-- Company Info -->
@@ -482,10 +453,10 @@
                         <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
                         <div>
                             <span class="text-xl font-bold text-white">AmpLuxe</span>
-                            <p class="text-xs text-gray-400 -mt-1">Energy Solutions</p>
+                            <p class="text-xs text-white-200 -mt-1">Energy Solutions</p>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
+                    <p class="text-white-300 mb-6 leading-relaxed">
                         AmpLuxe Energy Solutions LLP provides comprehensive and reliable solar and electrical services to power a sustainable future for commercial and residential clients across India.
                     </p>
                     <div class="flex space-x-4">
@@ -508,10 +479,10 @@
                 <div>
                     <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-highlight transition-colors duration-200">Careers</a></li>
+                        <li><a href="index.html" class="text-white-300 hover:text-highlight transition-colors duration-200">Home</a></li>
+                        <li><a href="about.html" class="text-white-300 hover:text-highlight transition-colors duration-200">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-300 hover:text-highlight transition-colors duration-200">Contact</a></li>
+                        <li><a href="#" class="text-white-300 hover:text-highlight transition-colors duration-200">Careers</a></li>
                     </ul>
                 </div>
                 
@@ -519,11 +490,11 @@
                 <div>
                     <h4 class="text-lg font-bold text-white mb-6">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="service-solar-panel.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Solar Panel Installation</a></li>
-                        <li><a href="service-electrical-wiring.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Electrical Wiring</a></li>
-                        <li><a href="service-meter-box.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Meter Box Installation</a></li>
-                        <li><a href="service-electrical-connection.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">New Electrical Connection</a></li>
-                        <li><a href="service-maintenance.html" class="text-gray-300 hover:text-highlight transition-colors duration-200">Maintenance Services</a></li>
+                        <li><a href="service-solar-panel.html" class="text-white-300 hover:text-highlight transition-colors duration-200">Solar Panel Installation</a></li>
+                        <li><a href="service-electrical-wiring.html" class="text-white-300 hover:text-highlight transition-colors duration-200">Electrical Wiring</a></li>
+                        <li><a href="service-meter-box.html" class="text-white-300 hover:text-highlight transition-colors duration-200">Meter Box Installation</a></li>
+                        <li><a href="service-electrical-connection.html" class="text-white-300 hover:text-highlight transition-colors duration-200">New Electrical Connection</a></li>
+                        <li><a href="service-maintenance.html" class="text-white-300 hover:text-highlight transition-colors duration-200">Maintenance Services</a></li>
                     </ul>
                 </div>
             </div>
@@ -531,13 +502,13 @@
             <!-- Bottom Footer -->
             <div class="border-t border-gray-700 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-white text-xs">
                         © 2025 AmpLuxe Energy Solutions LLP. All rights reserved.
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-400 hover:text-highlight text-sm transition-colors duration-200">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-highlight text-sm transition-colors duration-200">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-highlight text-sm transition-colors duration-200">Cookie Policy</a>
+                        <a href="#" class="text-white hover:text-highlight text-xs transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-white hover:text-highlight text-xs transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-white hover:text-highlight text-xs transition-colors duration-200">Cookie Policy</a>
                     </div>
                 </div>
             </div>
