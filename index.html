@@ -43,7 +43,9 @@
                         'accent': '#475569',
                         'dark': '#1e293b',
                         'light': '#f8fafc',
-                        'highlight': '#e4bd5a'
+                        'highlight': '#e4bd5a',
+                        'fon': '#258c77',
+                        'son' :'#ebfa9e'
                     },
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
@@ -122,14 +124,14 @@
                     <a href="contact.html" class="text-secondary hover:text-accent font-semibold group">
                         <span class="relative inline-block">
                             CONTACT
-                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-fon rounded-full group-hover:w-full transition-all duration-300"></span>
                         </span>
                     </a>
                 </div>
                 
                 <!-- CTA Button -->
                 <div class="hidden lg:block">
-                    <a href="contact.html" class="bg-highlight text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg flex items-center space-x-2" aria-label="Get a quote">
+                    <a href="contact.html" class="bg-fon text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg flex items-center space-x-2" aria-label="Get a quote">
                         <span>Get A Quote</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -166,7 +168,7 @@
                 </div>
                 
                 <a href="contact.html" class="block px-4 py-2 text-secondary hover:text-accent hover:bg-pale-steel-light rounded-lg">CONTACT</a>
-                <a href="contact.html" class="block mx-4 mt-6 bg-highlight text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
+                <a href="contact.html" class="block mx-4 mt-6 bg-fon text-white px-6 py-3 rounded-full text-center font-semibold">Get A Quote</a>
             </div>
         </div>
     </nav>
@@ -192,7 +194,7 @@
                         </p>
 
                         <div class="flex flex-wrap gap-4 mt-4">
-                            <a href="contact.html" class="bg-highlight text-dark px-6 py-3 rounded-full font-bold hover:shadow-xl inline-flex items-center space-x-3">
+                            <a href="contact.html" class="bg-son text-dark px-6 py-3 rounded-full font-bold hover:shadow-xl inline-flex items-center space-x-3">
                                 <span>Get Free Quote</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -240,7 +242,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10">
                 <div class="w-full lg:max-w-2xl">
-                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-4">
+                    <div class="inline-flex items-center space-x-2 bg-fon/20 px-4 py-2 rounded-full text-sm font-semibold text-fon mb-4">
                         <span>OUR SERVICES</span>
                     </div>
                     <h2 id="services-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">Core Services We Offer</h2>
@@ -248,7 +250,7 @@
                 </div>
 
                 <div class="w-full lg:w-auto">
-                    <a href="service.html" class="inline-flex items-center gap-3 bg-highlight text-dark px-5 py-3 rounded-full font-semibold shadow hover:shadow-lg transition-all duration-200">
+                    <a href="service.html" class="inline-flex items-center gap-3 bg-son text-dark px-5 py-3 rounded-full font-semibold shadow hover:shadow-lg transition-all duration-200">
                         <span>View All Services</span>
                         <i class="fas fa-arrow-right text-sm"></i>
                     </a>
@@ -257,7 +259,7 @@
         </div>
 
         <!-- Brand strip with service cards -->
-        <div class="bg-highlight py-12">
+        <div class="bg-son py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-8 md:grid-cols-3">
                     <!-- Card 1 -->
@@ -729,87 +731,92 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-light text-dark py-20 relative overflow-hidden" style="background-image: url('s7.jpg'); background-repeat: no-repeat; background-position: left 20px bottom 24px; background-size: 200px;">
+   <!-- Footer -->
+    <footer class="bg-[#355a55] text-white py-20 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-12">
                 <!-- Company Info -->
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
-                        <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-10 w-auto">
+                        <img src="logo.jpg" alt="AmpLuxe Energy Solutions" class="h-8 w-auto">
                         <div>
-                            <span class="text-xl font-bold">AmpLuxe</span>
-                            <p class="text-xs text-secondary -mt-1">Energy Solutions</p>
+                            <span class="text-xl font-bold text-white">AmpLuxe</span>
+                            <p class="text-xs text-white-200 -mt-1">Energy Solutions</p>
                         </div>
                     </div>
-                    <p class="text-secondary leading-relaxed">
+                    <p class="text-white-300 leading-relaxed">
                         Providing comprehensive solar and electrical services for a sustainable future.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-pale-steel-light border border-gray-200">
-                            <i class="fab fa-facebook-f text-dark"></i>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-pale-steel-light border border-gray-200">
-                            <i class="fab fa-twitter text-dark"></i>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-pale-steel-light border border-gray-200">
-                            <i class="fab fa-linkedin-in text-dark"></i>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-pale-steel-light border border-gray-200">
-                            <i class="fab fa-instagram text-dark"></i>
+                        <a href="#" class="w-10 h-10 bg-highlight/20 rounded-lg flex items-center justify-center hover:bg-highlight">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
-                <div class="space-y-6">
-                    <h4 class="text-xl font-bold">Quick Links</h4>
+                    <div class="space-y-6">
+                    <h4 class="text-xl font-bold text-white">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="about.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>About Us</span></a></li>
-                        <li><a href="service.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Services</span></a></li>
-                        <li><a href="contact.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Contact</span></a></li>
-                        <li><a href="#" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Projects</span></a></li>
+                        <li><a href="about.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>About Us</span></a></li>
+                        <li><a href="#" class="text-white hover:text-white-300 flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Services</span></a></li>
+                        <li><a href="contact.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Contact</span></a></li>
+                        <li><a href="#" class="text-white hover:text-white-300 flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Projects</span></a></li>
                     </ul>
                 </div>
                 
                 <!-- Services -->
                 <div class="space-y-6">
-                    <h4 class="text-xl font-bold">Our Services</h4>
+                    <h4 class="text-xl font-bold text-white">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="service-solar-installation.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Solar Installation</span></a></li>
-                        <li><a href="service-electrical-wiring.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Electrical Wiring</span></a></li>
-                        <li><a href="service-maintenance.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Maintenance</span></a></li>
-                        <li><a href="service-meter-box.html" class="text-secondary hover:text-accent flex items-center space-x-2"><i class="fas fa-chevron-right text-xs text-accent"></i><span>Meter Box Upgrades</span></a></li>
+                        <li><a href="service-solar-panel.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Solar Installation</span></a></li>
+                        <li><a href="service-electrical-wiring.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Electrical Wiring</span></a></li>
+                        <li><a href="service-maintenance.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Maintenance</span></a></li>
+                        <li><a href="service-meter-box.html" class="text-white-300 hover:text-white flex items-center space-x-2"><i class="fas fa-chevron-right text-xs"></i><span>Meter Box Upgrades</span></a></li>
                     </ul>
                 </div>
                 
                 <!-- Contact Info -->
                 <div class="space-y-6">
-                    <h4 class="text-xl font-bold">Contact</h4>
-                    <div class="space-y-3 text-secondary">
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
-                            <div class="text-dark">Mount Road, Chennai, Tamil Nadu, India</div>
+                    <h4 class="text-xl font-bold">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-fon mt-1"></i>
+                            <p class="text-white-300">Mount Road, Chennai, Tamil Nadu, India</p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-accent"></i>
-                            <a href="mailto:info@ampluxeenergy.com" class="text-dark hover:text-accent">info@ampluxeenergy.com</a>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-fon"></i>
+                            <p class="text-white-300">info@ampluxeenergy.com</p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-phone text-accent"></i>
-                            <a href="tel:+919XXXXXXXXX" class="text-dark hover:text-accent">+91 9XX XXX XXXX</a>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-fon"></i>
+                            <p class="text-white-300">+91 XXX XXX XXXX</p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-clock text-accent"></i>
-                            <div class="text-dark">Mon - Sat: 9:00 AM - 6:00 PM</div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-fon"></i>
+                            <p class="text-white-300">Mon - Sat: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-pale-steel/40 mt-16 pt-8 text-center">
-                <p class="text-secondary">&copy; 2025 AmpLuxe Energy Solutions LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
+                    <div class="border-t border-secondary/30 mt-16 pt-8 text-center">
+                    <p class="text-white text-xs">&copy; 2025 AmpLuxe Energy Solutions LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
             </div>
+        </footer>
+
+        </main>
         </div>
     </footer>
 
