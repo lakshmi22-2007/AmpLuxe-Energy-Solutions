@@ -15,21 +15,26 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-	<!-- small utility styles for hero and buttons -->
-	<style>
-		.hero {
-			background-image:
-				linear-gradient(90deg, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.35) 60%),
-				url('image.png');
-			background-size: cover;
-			background-position: center;
-		}
-		.btn {
-			@apply inline-flex items-center justify-center rounded-full font-semibold transition-all;
-		}
-		/* improved readable counters on dark hero */
-		.counter { font-variant-numeric: tabular-nums; }
-	</style>
+    <!-- small utility styles for hero and buttons -->
+    <style>
+        /* Root & layout fixes: ensure page root matches footer so any extra scroll area is not white */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { height: 100%; min-height: 100%; background-color: #355a55; overflow-x: hidden; }
+        body { min-height: 100%; margin: 0; background-color: #355a55; display: flex; flex-direction: column; }
+
+        .hero {
+            background-image:
+                linear-gradient(90deg, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.35) 60%),
+                url('image.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn {
+            @apply inline-flex items-center justify-center rounded-full font-semibold transition-all;
+        }
+        /* improved readable counters on dark hero */
+        .counter { font-variant-numeric: tabular-nums; }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -74,13 +79,13 @@
                     <a href="index.html" class="text-dark hover:text-accent font-semibold group">
                         <span class="relative inline-block">
                             HOME
-                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight rounded-full"></span>
+                            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-fon rounded-full"></span>
                         </span>
                     </a>
                     <a href="about.html" class="text-secondary hover:text-accent font-semibold group">
                         <span class="relative inline-block">
                             ABOUT US
-                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-fon rounded-full group-hover:w-full transition-all duration-300"></span>
                         </span>
                     </a>
                     
@@ -88,7 +93,7 @@
                     <div class="relative">
                         <button id="services-dropdown-btn" class="flex items-center space-x-2 text-secondary hover:text-accent font-semibold">
                                 <span class="relative inline-block">SERVICES
-                                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-highlight rounded-full group-hover:w-full transition-all duration-300"></span>
+                                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-fon rounded-full group-hover:w-full transition-all duration-300"></span>
                                 </span>
                                 <i id="services-dropdown-icon" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
                         </button>
@@ -173,6 +178,8 @@
         </div>
     </nav>
 
+    <main class="flex-1">
+
     <!-- Hero Section -->
     <section class="hero min-h-screen relative overflow-hidden" aria-label="Hero: AmpLuxe Energy Solutions">
         <div class="relative pt-28 pb-20">
@@ -245,8 +252,8 @@
                     <div class="inline-flex items-center space-x-2 bg-fon/20 px-4 py-2 rounded-full text-sm font-semibold text-fon mb-4">
                         <span>OUR SERVICES</span>
                     </div>
-                    <h2 id="services-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">Core Services We Offer</h2>
-                    <p class="mt-3 text-lg text-secondary max-w-2xl">Smart, safe and reliable electrical & solar services tailored for homes and businesses — designed to save you money and reduce your carbon footprint.</p>
+                    <h2 id="services-heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-dark leading-tight">Core Services We Offer</h2>
+                    <p class="mt-3 text-1xl text-secondary max-w-2xl">Smart, safe and reliable electrical & solar services tailored for homes and businesses designed to save you money and reduce your carbon footprint.</p>
                 </div>
 
                 <div class="w-full lg:w-auto">
@@ -314,13 +321,13 @@
                 <!-- Content Column -->
                 <div class="space-y-8">
                     <div class="space-y-4">
-                        <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight mb-4">
+                        <div class="inline-flex items-center space-x-2 bg-fon/20 px-4 py-2 rounded-full text-sm font-semibold text-fon mb-4">
                             <span>WHY CHOOSE US</span>
                         </div>
-                        <h2 class="text-5xl font-black text-dark leading-tight">
+                        <h2 class="text-4xl font-black text-dark leading-tight">
                             Empowering Communities with Solar Energy
                         </h2>
-                        <p class="text-secondary text-lg leading-relaxed">
+                        <p class="text-secondary text-1xl leading-relaxed">
                             We provide comprehensive solar and electrical solutions designed to meet all your energy needs with safety, efficiency, and reliability for a sustainable future.
                         </p>
                     </div>
@@ -328,38 +335,38 @@
                     <!-- Benefits Grid -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="flex items-center space-x-3">
-                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-highlight text-sm"></i>
+                            <div class="w-6 h-6 bg-fon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-fon text-sm"></i>
                             </div>
                             <span class="text-dark font-semibold">Save Your Money</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-highlight text-sm"></i>
+                            <div class="w-6 h-6 bg-fon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-fon text-sm"></i>
                             </div>
                             <span class="text-dark font-semibold">Flexibility Work Environment</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-highlight text-sm"></i>
+                            <div class="w-6 h-6 bg-fon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-fon text-sm"></i>
                             </div>
                             <span class="text-dark font-semibold">Simple And Easy To Use</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-highlight text-sm"></i>
+                            <div class="w-6 h-6 bg-fon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-fon text-sm"></i>
                             </div>
                             <span class="text-dark font-semibold">Best Energy Solution</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-highlight text-sm"></i>
+                            <div class="w-6 h-6 bg-fon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-fon text-sm"></i>
                             </div>
                             <span class="text-dark font-semibold">Very Fast Customer Service</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="w-6 h-6 bg-highlight/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-highlight text-sm"></i>
+                            <div class="w-6 h-6 bg-fon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-fon text-sm"></i>
                             </div>
                             <span class="text-dark font-semibold">Experienced Team Members</span>
                         </div>
@@ -386,11 +393,11 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Content Side -->
                 <div class="space-y-8">
-                    <div class="inline-flex items-center space-x-2 bg-highlight/20 px-4 py-2 rounded-full text-sm font-semibold text-highlight">
+                    <div class="inline-flex items-center space-x-2 bg-fon/20 px-4 py-2 rounded-full text-sm font-semibold text-fon">
                         <span>ABOUT OUR COMPANY</span>
                     </div>
                     
-                    <h2 class="text-5xl font-black text-dark leading-tight">
+                    <h2 class="text-4xl font-black text-dark leading-tight">
                         Powering the 
                         <span class="block">Future One Ray at</span>
                         <span class="block">Time</span>
@@ -403,7 +410,7 @@
                                 <i class="fas fa-cog text-green-600 text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-dark mb-3">Reliability Manufacturing</h3>
+                                <h3 class="text-lg font-bold text-dark mb-3">Reliability Manufacturing</h3>
                                 <p class="text-secondary leading-relaxed">
                                     Aut dispenser dolorous aspersions repel lat a man can easily trusted.
                                 </p>
@@ -415,7 +422,7 @@
                                 <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-dark mb-3">Material Financing Energy</h3>
+                                <h3 class="text-lg font-bold text-dark mb-3">Material Financing Energy</h3>
                                 <p class="text-secondary leading-relaxed">
                                     Sun consequent aut dispenser dolorous repel lat with a man who chooses to enjoy.
                                 </p>
@@ -461,7 +468,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-12">
-                <div class="inline-flex items-center space-x-2 bg-highlight text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <div class="inline-flex items-center space-x-2 bg-fon text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                     <span>OUR WORK PROCESS</span>
                 </div>
                 
@@ -483,7 +490,7 @@
                         
                         <!-- Step Badge -->
                         <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                            <div class="bg-highlight text-white px-3 py-1 rounded-full text-xs font-bold">
+                            <div class="bg-fon text-white px-3 py-1 rounded-full text-xs font-bold">
                                 Step - 01
                             </div>
                         </div>
@@ -505,7 +512,7 @@
                         
                         <!-- Step Badge -->
                         <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                            <div class="bg-highlight text-white px-3 py-1 rounded-full text-xs font-bold">
+                            <div class="bg-fon text-white px-3 py-1 rounded-full text-xs font-bold">
                                 Step - 02
                             </div>
                         </div>
@@ -527,7 +534,7 @@
                         
                         <!-- Step Badge -->
                         <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                            <div class="bg-highlight text-white px-3 py-1 rounded-full text-xs font-bold">
+                            <div class="bg-fon text-white px-3 py-1 rounded-full text-xs font-bold">
                                 Step - 03
                             </div>
                         </div>
@@ -553,7 +560,7 @@
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto">
                                 <div class="text-6xl text-slate-400 mb-6">"</div>
-                                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                                <p class="text-lg md:text-lg text-gray-700 leading-relaxed mb-8">
                                     Ethad haram quidem rerum facilis et expedited distinction. Namos libero tempore, cum solute nobis est eligible that options cumque nihil impedit quo minus id quod We will uncover many web sites still in their work infancy versions have evolved Various versions have evolved over the years, sometimes processing
                                 </p>
                                 <div class="flex items-center">
@@ -575,7 +582,7 @@
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto">
                                 <div class="text-6xl text-slate-400 mb-6">"</div>
-                                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                                <p class="text-lg md:text-lg text-gray-700 leading-relaxed mb-8">
                                     Amazing solar installation service! AmpLuxe Energy Solutions transformed our home with their professional team. The quality of work exceeded our expectations and the energy savings are remarkable. Highly recommended for anyone looking for reliable solar solutions.
                                 </p>
                                 <div class="flex items-center">
@@ -597,7 +604,7 @@
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto">
                                 <div class="text-6xl text-slate-400 mb-6">"</div>
-                                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                                <p class="text-lg md:text-lg text-gray-700 leading-relaxed mb-8">
                                     Professional electrical services with excellent customer support. The team was punctual, efficient, and ensured all safety standards were met. Our business operations run smoothly thanks to their reliable electrical infrastructure solutions.
                                 </p>
                                 <div class="flex items-center">
@@ -641,16 +648,16 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left: Copy + CTAs -->
                 <div class="text-left">
-                    <div class="inline-flex items-center gap-3 bg-highlight/20 px-3 py-1 rounded-full text-sm font-semibold text-highlight mb-4">
+                    <div class="inline-flex items-center gap-3 bg-fon/20 px-3 py-1 rounded-full text-sm font-semibold text-fon mb-4">
                         <span>GET STARTED</span>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark leading-tight">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-dark leading-tight">
                         Ready to start your
                         <span class="block text-accent">Energy Journey?</span>
                     </h2>
 
-                    <p class="mt-4 text-lg text-secondary max-w-xl">
+                    <p class="mt-4 text-1xl text-secondary max-w-xl">
                         Book a free consultation or request a callback — our experts will assess your needs and recommend the right solar & electrical solution for lasting savings and reliability.
                     </p>
 
@@ -721,7 +728,7 @@
                             <textarea name="message" placeholder="Short note (optional)" rows="3" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-2 focus:ring-accent focus:ring-opacity-20"></textarea>
 
                             <div class="flex items-center justify-between">
-                                <button type="submit" class="bg-highlight text-white px-5 py-2 rounded-full font-semibold hover:shadow-md transition">Request Callback</button>
+                                <button type="submit" class="bg-fon text-white px-5 py-2 rounded-full font-semibold hover:shadow-md transition">Request Callback</button>
                                 <div id="callback-status" class="text-sm text-green-600 hidden">Message sent — we will call you soon.</div>
                             </div>
                         </form>
@@ -731,8 +738,10 @@
         </div>
     </section>
 
-   <!-- Footer -->
-    <footer class="bg-[#355a55] text-white py-20 text-sm">
+</main>
+
+    <!-- Footer -->
+     <footer class="bg-[#355a55] text-white py-20 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-12">
                 <!-- Company Info -->
@@ -815,10 +824,6 @@
                 </div>
             </div>
         </footer>
-
-        </main>
-        </div>
-    </footer>
 
     <!-- Scripts -->
     <script>
